@@ -1,0 +1,17 @@
+{
+  "model_version": "route-analysis-v1",
+  "self_scope_root_tokens": [
+    "currentUser",
+    "me",
+    "viewer"
+  ],
+  "visibility_tokens": [
+    "public"
+  ],
+  "exact_boundaries": {
+    "field:MarketRoot.sorareWatchlists": {
+      "family": "visibility",
+      "evidence": "system_owned_public_collection"
+    }
+  }
+}

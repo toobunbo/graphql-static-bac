@@ -1,0 +1,229 @@
+{
+  "contract_version": "1.0",
+  "stage": "S0",
+  "schema_fingerprint": "sha256:2fa6a5f67a0fda683077797983b582514d303ab4d8326c0fc77021aaed5ccf80",
+  "scope": ["query"],
+  "producer": {
+    "name": "graphql-static-bac",
+    "version": "0.1.0"
+  },
+  "status": "complete",
+  "warnings": [],
+  "fixture": {
+    "name": "user_device",
+    "schema_subset": true,
+    "possible_types_filtered_to_fixture": true,
+    "interfaces_filtered_to_fixture": true
+  },
+  "data": {
+    "roots": {
+      "query": "Query",
+      "mutation": "Mutation",
+      "subscription": "Subscription"
+    },
+    "types": {
+      "Query": {
+        "type_id": "type:Query",
+        "kind": "OBJECT",
+        "description": null,
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "currentUser": {
+            "field_id": "field:Query.currentUser",
+            "name": "currentUser",
+            "description": "Fetch the current user.",
+            "arguments": [],
+            "return_type": {
+              "display": "CurrentUser",
+              "named_type": "CurrentUser",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          },
+          "node": {
+            "field_id": "field:Query.node",
+            "name": "node",
+            "description": "Fetches an object given its ID.",
+            "arguments": [
+              {
+                "arg_id": "arg:Query.node.id",
+                "name": "id",
+                "description": "ID of the object.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "ID!",
+                  "named_type": "ID",
+                  "named_kind": "SCALAR",
+                  "wrappers": ["NON_NULL"]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "Node",
+              "named_type": "Node",
+              "named_kind": "INTERFACE",
+              "wrappers": []
+            }
+          },
+          "nodes": {
+            "field_id": "field:Query.nodes",
+            "name": "nodes",
+            "description": "Fetches objects given their IDs.",
+            "arguments": [
+              {
+                "arg_id": "arg:Query.nodes.ids",
+                "name": "ids",
+                "description": "IDs of the objects.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "[ID!]!",
+                  "named_type": "ID",
+                  "named_kind": "SCALAR",
+                  "wrappers": ["NON_NULL", "LIST", "NON_NULL"]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "[Node]!",
+              "named_type": "Node",
+              "named_kind": "INTERFACE",
+              "wrappers": ["NON_NULL", "LIST"]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "CurrentUser": {
+        "type_id": "type:CurrentUser",
+        "kind": "OBJECT",
+        "description": "Current Sorare user",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "currentDevice": {
+            "field_id": "field:CurrentUser.currentDevice",
+            "name": "currentDevice",
+            "description": "Current device used for this query.",
+            "arguments": [],
+            "return_type": {
+              "display": "UserDevice",
+              "named_type": "UserDevice",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          },
+          "devices": {
+            "field_id": "field:CurrentUser.devices",
+            "name": "devices",
+            "description": "Devices associated with the current user.",
+            "arguments": [],
+            "return_type": {
+              "display": "[UserDevice!]",
+              "named_type": "UserDevice",
+              "named_kind": "OBJECT",
+              "wrappers": ["LIST", "NON_NULL"]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "Node": {
+        "type_id": "type:Node",
+        "kind": "INTERFACE",
+        "description": "An object with an ID.",
+        "interfaces": [],
+        "possible_types": ["UserDevice"],
+        "fields": {
+          "id": {
+            "field_id": "field:Node.id",
+            "name": "id",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "ID!",
+              "named_type": "ID",
+              "named_kind": "SCALAR",
+              "wrappers": ["NON_NULL"]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "UserDevice": {
+        "type_id": "type:UserDevice",
+        "kind": "OBJECT",
+        "description": "A Sorare manager device",
+        "interfaces": ["Node"],
+        "possible_types": [],
+        "fields": {
+          "deviceType": {
+            "field_id": "field:UserDevice.deviceType",
+            "name": "deviceType",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "String!",
+              "named_type": "String",
+              "named_kind": "SCALAR",
+              "wrappers": ["NON_NULL"]
+            }
+          },
+          "id": {
+            "field_id": "field:UserDevice.id",
+            "name": "id",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "ID!",
+              "named_type": "ID",
+              "named_kind": "SCALAR",
+              "wrappers": ["NON_NULL"]
+            }
+          },
+          "lastUsedAt": {
+            "field_id": "field:UserDevice.lastUsedAt",
+            "name": "lastUsedAt",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "ISO8601DateTime",
+              "named_type": "ISO8601DateTime",
+              "named_kind": "SCALAR",
+              "wrappers": []
+            }
+          },
+          "os": {
+            "field_id": "field:UserDevice.os",
+            "name": "os",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "String!",
+              "named_type": "String",
+              "named_kind": "SCALAR",
+              "wrappers": ["NON_NULL"]
+            }
+          },
+          "userAgent": {
+            "field_id": "field:UserDevice.userAgent",
+            "name": "userAgent",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "String!",
+              "named_type": "String",
+              "named_kind": "SCALAR",
+              "wrappers": ["NON_NULL"]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      }
+    }
+  }
+}

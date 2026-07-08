@@ -1,0 +1,329 @@
+{
+  "contract_version": "1.0",
+  "stage": "S0",
+  "schema_fingerprint": "sha256:8e7c801299472e24571efdee2dbb57f431979b8a742b19a5f0973e08fbc0da75",
+  "scope": [
+    "query"
+  ],
+  "producer": {
+    "name": "graphql-static-bac",
+    "version": "0.1.0"
+  },
+  "status": "complete",
+  "warnings": [],
+  "data": {
+    "roots": {
+      "query": "Query",
+      "mutation": null,
+      "subscription": null
+    },
+    "types": {
+      "DateTime": {
+        "type_id": "type:DateTime",
+        "kind": "SCALAR",
+        "description": null,
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {},
+        "input_fields": {},
+        "enum_values": []
+      },
+      "Node": {
+        "type_id": "type:Node",
+        "kind": "INTERFACE",
+        "description": null,
+        "interfaces": [],
+        "possible_types": [
+          "Team",
+          "User"
+        ],
+        "fields": {
+          "id": {
+            "field_id": "field:Node.id",
+            "name": "id",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "ID!",
+              "named_type": "ID",
+              "named_kind": "SCALAR",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "Query": {
+        "type_id": "type:Query",
+        "kind": "OBJECT",
+        "description": "Root query description",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "node": {
+            "field_id": "field:Query.node",
+            "name": "node",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:Query.node.id",
+                "name": "id",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "ID!",
+                  "named_type": "ID",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "Node",
+              "named_type": "Node",
+              "named_kind": "INTERFACE",
+              "wrappers": []
+            }
+          },
+          "search": {
+            "field_id": "field:Query.search",
+            "name": "search",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:Query.search.filter",
+                "name": "filter",
+                "description": null,
+                "default_value": "{limit: 10, role: USER}",
+                "type_ref": {
+                  "display": "SearchFilter",
+                  "named_type": "SearchFilter",
+                  "named_kind": "INPUT_OBJECT",
+                  "wrappers": []
+                }
+              }
+            ],
+            "return_type": {
+              "display": "[SearchResult!]!",
+              "named_type": "SearchResult",
+              "named_kind": "UNION",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "Role": {
+        "type_id": "type:Role",
+        "kind": "ENUM",
+        "description": null,
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {},
+        "input_fields": {},
+        "enum_values": [
+          {
+            "name": "ADMIN",
+            "description": null,
+            "is_deprecated": false,
+            "deprecation_reason": null
+          },
+          {
+            "name": "OLD",
+            "description": null,
+            "is_deprecated": true,
+            "deprecation_reason": "Use USER"
+          },
+          {
+            "name": "USER",
+            "description": null,
+            "is_deprecated": false,
+            "deprecation_reason": null
+          }
+        ]
+      },
+      "SearchFilter": {
+        "type_id": "type:SearchFilter",
+        "kind": "INPUT_OBJECT",
+        "description": null,
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {},
+        "input_fields": {
+          "limit": {
+            "input_field_id": "input_field:SearchFilter.limit",
+            "name": "limit",
+            "description": null,
+            "default_value": "20",
+            "type_ref": {
+              "display": "Int",
+              "named_type": "Int",
+              "named_kind": "SCALAR",
+              "wrappers": []
+            }
+          },
+          "ownerIds": {
+            "input_field_id": "input_field:SearchFilter.ownerIds",
+            "name": "ownerIds",
+            "description": null,
+            "default_value": null,
+            "type_ref": {
+              "display": "[ID!]!",
+              "named_type": "ID",
+              "named_kind": "SCALAR",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          },
+          "role": {
+            "input_field_id": "input_field:SearchFilter.role",
+            "name": "role",
+            "description": null,
+            "default_value": "USER",
+            "type_ref": {
+              "display": "Role",
+              "named_type": "Role",
+              "named_kind": "ENUM",
+              "wrappers": []
+            }
+          }
+        },
+        "enum_values": []
+      },
+      "SearchResult": {
+        "type_id": "type:SearchResult",
+        "kind": "UNION",
+        "description": null,
+        "interfaces": [],
+        "possible_types": [
+          "Team",
+          "User"
+        ],
+        "fields": {},
+        "input_fields": {},
+        "enum_values": []
+      },
+      "Team": {
+        "type_id": "type:Team",
+        "kind": "OBJECT",
+        "description": null,
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "id": {
+            "field_id": "field:Team.id",
+            "name": "id",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "ID!",
+              "named_type": "ID",
+              "named_kind": "SCALAR",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "slug": {
+            "field_id": "field:Team.slug",
+            "name": "slug",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "String!",
+              "named_type": "String",
+              "named_kind": "SCALAR",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "User": {
+        "type_id": "type:User",
+        "kind": "OBJECT",
+        "description": null,
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "createdAt": {
+            "field_id": "field:User.createdAt",
+            "name": "createdAt",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "DateTime!",
+              "named_type": "DateTime",
+              "named_kind": "SCALAR",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "email": {
+            "field_id": "field:User.email",
+            "name": "email",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "String",
+              "named_type": "String",
+              "named_kind": "SCALAR",
+              "wrappers": []
+            }
+          },
+          "id": {
+            "field_id": "field:User.id",
+            "name": "id",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "ID!",
+              "named_type": "ID",
+              "named_kind": "SCALAR",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "name": {
+            "field_id": "field:User.name",
+            "name": "name",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "String!",
+              "named_type": "String",
+              "named_kind": "SCALAR",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      }
+    }
+  }
+}

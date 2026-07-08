@@ -1,0 +1,129 @@
+{
+  "contract_version": "1.0",
+  "stage": "S3",
+  "schema_fingerprint": "sha256:2fa6a5f67a0fda683077797983b582514d303ab4d8326c0fc77021aaed5ccf80",
+  "scope": ["query"],
+  "producer": {
+    "name": "graphql-static-bac",
+    "version": "0.1.0"
+  },
+  "status": "complete",
+  "warnings": [],
+  "fixture": {
+    "name": "user_device",
+    "schema_subset": true
+  },
+  "data": {
+    "targets": {
+      "type:UserDevice": {
+        "target_type_id": "type:UserDevice",
+        "sink_ref_ids": [
+          "sink:UserDevice",
+          "sink:UserDevice.deviceType",
+          "sink:UserDevice.lastUsedAt",
+          "sink:UserDevice.os",
+          "sink:UserDevice.userAgent"
+        ],
+        "enumeration_status": "complete",
+        "caps": [
+          {
+            "cap_id": "cap:sha256:bb7413ac2803ba4d1a087dc85ed1644e71f51eafb6706b676d5e80d6f2bf5adc",
+            "origin": "global_id",
+            "entry_field_id": "field:Query.node",
+            "target_type_id": "type:UserDevice",
+            "edges": [
+              {
+                "edge_id": "field:Query.node",
+                "kind": "FIELD",
+                "source_type_id": "type:Query",
+                "field_id": "field:Query.node",
+                "target_type_id": "type:Node"
+              },
+              {
+                "edge_id": "type_condition:Node->UserDevice",
+                "kind": "TYPE_CONDITION",
+                "source_type_id": "type:Node",
+                "field_id": null,
+                "target_type_id": "type:UserDevice"
+              }
+            ],
+            "cycle_templates": [],
+            "display_projection": "Query.node -> ... on UserDevice"
+          },
+          {
+            "cap_id": "cap:sha256:de1c459792ac720e8e88f2c2175c88095a7041f5b651e399cf6ec238486ed135",
+            "origin": "global_id",
+            "entry_field_id": "field:Query.nodes",
+            "target_type_id": "type:UserDevice",
+            "edges": [
+              {
+                "edge_id": "field:Query.nodes",
+                "kind": "FIELD",
+                "source_type_id": "type:Query",
+                "field_id": "field:Query.nodes",
+                "target_type_id": "type:Node"
+              },
+              {
+                "edge_id": "type_condition:Node->UserDevice",
+                "kind": "TYPE_CONDITION",
+                "source_type_id": "type:Node",
+                "field_id": null,
+                "target_type_id": "type:UserDevice"
+              }
+            ],
+            "cycle_templates": [],
+            "display_projection": "Query.nodes -> ... on UserDevice"
+          },
+          {
+            "cap_id": "cap:sha256:3c81becbeacbb9de0297a5c81ed9b64c46b849e0477129f6ff283ecc4ffcd46c",
+            "origin": "traversal",
+            "entry_field_id": "field:Query.currentUser",
+            "target_type_id": "type:UserDevice",
+            "edges": [
+              {
+                "edge_id": "field:Query.currentUser",
+                "kind": "FIELD",
+                "source_type_id": "type:Query",
+                "field_id": "field:Query.currentUser",
+                "target_type_id": "type:CurrentUser"
+              },
+              {
+                "edge_id": "field:CurrentUser.devices",
+                "kind": "FIELD",
+                "source_type_id": "type:CurrentUser",
+                "field_id": "field:CurrentUser.devices",
+                "target_type_id": "type:UserDevice"
+              }
+            ],
+            "cycle_templates": [],
+            "display_projection": "Query.currentUser -> CurrentUser.devices -> UserDevice"
+          },
+          {
+            "cap_id": "cap:sha256:7e98f9fe16e37b4fdbbc2b61c4ead7f41f53b596e6157d64bb161b05b9a955c1",
+            "origin": "traversal",
+            "entry_field_id": "field:Query.currentUser",
+            "target_type_id": "type:UserDevice",
+            "edges": [
+              {
+                "edge_id": "field:Query.currentUser",
+                "kind": "FIELD",
+                "source_type_id": "type:Query",
+                "field_id": "field:Query.currentUser",
+                "target_type_id": "type:CurrentUser"
+              },
+              {
+                "edge_id": "field:CurrentUser.currentDevice",
+                "kind": "FIELD",
+                "source_type_id": "type:CurrentUser",
+                "field_id": "field:CurrentUser.currentDevice",
+                "target_type_id": "type:UserDevice"
+              }
+            ],
+            "cycle_templates": [],
+            "display_projection": "Query.currentUser -> CurrentUser.currentDevice -> UserDevice"
+          }
+        ]
+      }
+    }
+  }
+}

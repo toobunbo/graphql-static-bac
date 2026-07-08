@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="616"
+     viewBox="0 0 820 616">
+  <style>
+    text {
+      font-family: JetBrains Mono, Cascadia Code, Fira Code, Consolas, monospace;
+      font-size: 13px;
+      fill: #cdd6f4;
+      white-space: pre;
+    }
+  </style>
+  <rect width="820" height="616" rx="8" ry="8" fill="#1e1e2e"/>
+  <text x="410" y="28" text-anchor="middle" style="fill:#7f849c;font-size:11px">$ tophql routes sorare.graphql --type CurrentUser --format tree</text>
+  <text x="18" y="58" xml:space="preserve"></text>
+  <text x="18" y="78" xml:space="preserve"><tspan>CurrentUser  (0 open · 515 unknown · 0 guarded)</tspan></text>
+  <text x="18" y="98" xml:space="preserve"><tspan>├── AnnouncementNotification.user</tspan></text>
+  <text x="18" y="118" xml:space="preserve"><tspan>│   ├── </tspan><tspan style="fill:#f9e2af">[UNKNOWN]</tspan><tspan> Query.node  ← id (ID!)</tspan></text>
+  <text x="18" y="138" xml:space="preserve"><tspan>│   └── </tspan><tspan style="fill:#f9e2af">[UNKNOWN]</tspan><tspan> Query.nodes  ← ids ([ID!]!)</tspan></text>
+  <text x="18" y="158" xml:space="preserve"><tspan>├── AuctionNotification.user</tspan></text>
+  <text x="18" y="178" xml:space="preserve"><tspan>│   ├── </tspan><tspan style="fill:#f9e2af">[UNKNOWN]</tspan><tspan> Query.node  ← id (ID!)</tspan></text>
+  <text x="18" y="198" xml:space="preserve"><tspan>│   └── </tspan><tspan style="fill:#f9e2af">[UNKNOWN]</tspan><tspan> Query.nodes  ← ids ([ID!]!)</tspan></text>
+  <text x="18" y="218" xml:space="preserve"><tspan>├── AutoClaimNotification.user</tspan></text>
+  <text x="18" y="238" xml:space="preserve"><tspan>│   ├── </tspan><tspan style="fill:#f9e2af">[UNKNOWN]</tspan><tspan> Query.node  ← id (ID!)</tspan></text>
+  <text x="18" y="258" xml:space="preserve"><tspan>│   └── </tspan><tspan style="fill:#f9e2af">[UNKNOWN]</tspan><tspan> Query.nodes  ← ids ([ID!]!)</tspan></text>
+  <text x="18" y="278" xml:space="preserve"><tspan>├── CardCollectionNotification.user</tspan></text>
+  <text x="18" y="298" xml:space="preserve"><tspan>│   ├── </tspan><tspan style="fill:#f9e2af">[UNKNOWN]</tspan><tspan> Query.node  ← id (ID!)</tspan></text>
+  <text x="18" y="318" xml:space="preserve"><tspan>│   └── </tspan><tspan style="fill:#f9e2af">[UNKNOWN]</tspan><tspan> Query.nodes  ← ids ([ID!]!)</tspan></text>
+  <text x="18" y="338" xml:space="preserve"><tspan>├── CardNotification.user</tspan></text>
+  <text x="18" y="358" xml:space="preserve"><tspan>│   ├── </tspan><tspan style="fill:#f9e2af">[UNKNOWN]</tspan><tspan> Query.node  ← id (ID!)</tspan></text>
+  <text x="18" y="378" xml:space="preserve"><tspan>│   └── </tspan><tspan style="fill:#f9e2af">[UNKNOWN]</tspan><tspan> Query.nodes  ← ids ([ID!]!)</tspan></text>
+  <text x="18" y="398" xml:space="preserve"><tspan>├── ConversionCreditNotification.user</tspan></text>
+  <text x="18" y="418" xml:space="preserve"><tspan>│   ├── </tspan><tspan style="fill:#f9e2af">[UNKNOWN]</tspan><tspan> Query.node  ← id (ID!)</tspan></text>
+  <text x="18" y="438" xml:space="preserve"><tspan>│   └── </tspan><tspan style="fill:#f9e2af">[UNKNOWN]</tspan><tspan> Query.nodes  ← ids ([ID!]!)</tspan></text>
+  <text x="18" y="458" xml:space="preserve"><tspan>├── DecisiveActionNotification.user</tspan></text>
+  <text x="18" y="478" xml:space="preserve"><tspan>│   ├── </tspan><tspan style="fill:#f9e2af">[UNKNOWN]</tspan><tspan> Query.node  ← id (ID!)</tspan></text>
+  <text x="18" y="498" xml:space="preserve"><tspan>│   └── </tspan><tspan style="fill:#f9e2af">[UNKNOWN]</tspan><tspan> Query.nodes  ← ids ([ID!]!)</tspan></text>
+  <text x="18" y="518" xml:space="preserve"><tspan>├── DecisivePurchaseNotification.user</tspan></text>
+  <text x="18" y="538" xml:space="preserve"><tspan>│   ├── </tspan><tspan style="fill:#f9e2af">[UNKNOWN]</tspan><tspan> Query.node  ← id (ID!)</tspan></text>
+  <text x="18" y="558" xml:space="preserve"><tspan>│   └── </tspan><tspan style="fill:#f9e2af">[UNKNOWN]</tspan><tspan> Query.nodes  ← ids ([ID!]!)</tspan></text>
+  <text x="18" y="578" xml:space="preserve"><tspan>├── EmailSubscription.subscriber</tspan></text>
+  <text x="18" y="598" xml:space="preserve"><tspan>│   ├── AnyCardInterface.currentUserSubscription</tspan></text>
+</svg>
+

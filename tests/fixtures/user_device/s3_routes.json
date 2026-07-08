@@ -1,0 +1,246 @@
+{
+  "contract_version": "2.0",
+  "stage": "S3",
+  "schema_fingerprint": "sha256:2fa6a5f67a0fda683077797983b582514d303ab4d8326c0fc77021aaed5ccf80",
+  "scope": [
+    "query"
+  ],
+  "producer": {
+    "name": "graphql-static-bac",
+    "version": "0.1.0"
+  },
+  "status": "complete",
+  "warnings": [],
+  "data": {
+    "analysis_model": "route-analysis-v1",
+    "policy_fingerprint": "sha256:a387effb4c340edf459fb8868cdd3f26db99e98ec387dd841338fa23ba97b5d8",
+    "targets": {
+      "type:UserDevice": {
+        "target_type_id": "type:UserDevice",
+        "sink_ref_ids": [
+          "sink:UserDevice",
+          "sink:UserDevice.deviceType",
+          "sink:UserDevice.lastUsedAt",
+          "sink:UserDevice.os",
+          "sink:UserDevice.userAgent"
+        ],
+        "reachability": "reachable",
+        "best_verdict": "open",
+        "routes": [
+          {
+            "route_id": "route:sha256:0018f02e17d8860975cc36095478d947026955fe8a3b7dd2e70c473fb27be60c",
+            "target_type_id": "type:UserDevice",
+            "origin": "global_id",
+            "verdict": "open",
+            "selector": {
+              "arg_ref": "arg:Query.node.id",
+              "root_arg_ref": "arg:Query.node.id",
+              "arg_path": "Query.node.id",
+              "input_path": [],
+              "type_ref": {
+                "display": "ID!",
+                "named_type": "ID",
+                "named_kind": "SCALAR",
+                "wrappers": [
+                  "NON_NULL"
+                ]
+              },
+              "classification": "object_selector",
+              "confidence": "high",
+              "selected_type_id": "type:Node"
+            },
+            "selector_continuity": "same",
+            "terminal_semantic_edge_id": "field:Query.node",
+            "boundaries": [],
+            "signature": {
+              "origin": "global_id",
+              "selector_ref": "arg:Query.node.id",
+              "terminal_semantic_edge_id": "field:Query.node",
+              "boundary_families": [],
+              "selector_continuity": "same",
+              "verdict": "open"
+            },
+            "witness": {
+              "witness_id": "cap:sha256:bb7413ac2803ba4d1a087dc85ed1644e71f51eafb6706b676d5e80d6f2bf5adc",
+              "entry_field_id": "field:Query.node",
+              "edges": [
+                {
+                  "edge_id": "field:Query.node",
+                  "kind": "FIELD",
+                  "source_type_id": "type:Query",
+                  "field_id": "field:Query.node",
+                  "target_type_id": "type:Node"
+                },
+                {
+                  "edge_id": "type_condition:Node->UserDevice",
+                  "kind": "TYPE_CONDITION",
+                  "source_type_id": "type:Node",
+                  "field_id": null,
+                  "target_type_id": "type:UserDevice"
+                }
+              ],
+              "field_hop_count": 1,
+              "display_projection": "Query.node -> ... on UserDevice"
+            }
+          },
+          {
+            "route_id": "route:sha256:71e8fb04e9f439b8421899f19d2c27ef26d411444b2b865bd49fa3d782c6ec08",
+            "target_type_id": "type:UserDevice",
+            "origin": "global_id",
+            "verdict": "open",
+            "selector": {
+              "arg_ref": "arg:Query.nodes.ids",
+              "root_arg_ref": "arg:Query.nodes.ids",
+              "arg_path": "Query.nodes.ids",
+              "input_path": [],
+              "type_ref": {
+                "display": "[ID!]!",
+                "named_type": "ID",
+                "named_kind": "SCALAR",
+                "wrappers": [
+                  "NON_NULL",
+                  "LIST",
+                  "NON_NULL"
+                ]
+              },
+              "classification": "object_selector",
+              "confidence": "high",
+              "selected_type_id": "type:Node"
+            },
+            "selector_continuity": "same",
+            "terminal_semantic_edge_id": "field:Query.nodes",
+            "boundaries": [],
+            "signature": {
+              "origin": "global_id",
+              "selector_ref": "arg:Query.nodes.ids",
+              "terminal_semantic_edge_id": "field:Query.nodes",
+              "boundary_families": [],
+              "selector_continuity": "same",
+              "verdict": "open"
+            },
+            "witness": {
+              "witness_id": "cap:sha256:de1c459792ac720e8e88f2c2175c88095a7041f5b651e399cf6ec238486ed135",
+              "entry_field_id": "field:Query.nodes",
+              "edges": [
+                {
+                  "edge_id": "field:Query.nodes",
+                  "kind": "FIELD",
+                  "source_type_id": "type:Query",
+                  "field_id": "field:Query.nodes",
+                  "target_type_id": "type:Node"
+                },
+                {
+                  "edge_id": "type_condition:Node->UserDevice",
+                  "kind": "TYPE_CONDITION",
+                  "source_type_id": "type:Node",
+                  "field_id": null,
+                  "target_type_id": "type:UserDevice"
+                }
+              ],
+              "field_hop_count": 1,
+              "display_projection": "Query.nodes -> ... on UserDevice"
+            }
+          },
+          {
+            "route_id": "route:sha256:dcd280c075bc09279a9c2230d0d5bb64e22dc01a285c8cf43d2b3fd67186d108",
+            "target_type_id": "type:UserDevice",
+            "origin": "traversal",
+            "verdict": "guarded",
+            "selector": null,
+            "selector_continuity": "not_applicable",
+            "terminal_semantic_edge_id": "field:CurrentUser.currentDevice",
+            "boundaries": [
+              {
+                "family": "self_scope",
+                "source": "heuristic",
+                "root_edge_id": "field:Query.currentUser",
+                "evidence": "root_field:currentUser"
+              }
+            ],
+            "signature": {
+              "origin": "traversal",
+              "selector_ref": null,
+              "terminal_semantic_edge_id": "field:CurrentUser.currentDevice",
+              "boundary_families": [
+                "self_scope"
+              ],
+              "selector_continuity": "not_applicable",
+              "verdict": "guarded"
+            },
+            "witness": {
+              "witness_id": "cap:sha256:7e98f9fe16e37b4fdbbc2b61c4ead7f41f53b596e6157d64bb161b05b9a955c1",
+              "entry_field_id": "field:Query.currentUser",
+              "edges": [
+                {
+                  "edge_id": "field:Query.currentUser",
+                  "kind": "FIELD",
+                  "source_type_id": "type:Query",
+                  "field_id": "field:Query.currentUser",
+                  "target_type_id": "type:CurrentUser"
+                },
+                {
+                  "edge_id": "field:CurrentUser.currentDevice",
+                  "kind": "FIELD",
+                  "source_type_id": "type:CurrentUser",
+                  "field_id": "field:CurrentUser.currentDevice",
+                  "target_type_id": "type:UserDevice"
+                }
+              ],
+              "field_hop_count": 2,
+              "display_projection": "Query.currentUser -> CurrentUser.currentDevice -> UserDevice"
+            }
+          },
+          {
+            "route_id": "route:sha256:27d9625838466e926e82870b4a08d1e888f1558b014e2495fc696d057ed9ffa3",
+            "target_type_id": "type:UserDevice",
+            "origin": "traversal",
+            "verdict": "guarded",
+            "selector": null,
+            "selector_continuity": "not_applicable",
+            "terminal_semantic_edge_id": "field:CurrentUser.devices",
+            "boundaries": [
+              {
+                "family": "self_scope",
+                "source": "heuristic",
+                "root_edge_id": "field:Query.currentUser",
+                "evidence": "root_field:currentUser"
+              }
+            ],
+            "signature": {
+              "origin": "traversal",
+              "selector_ref": null,
+              "terminal_semantic_edge_id": "field:CurrentUser.devices",
+              "boundary_families": [
+                "self_scope"
+              ],
+              "selector_continuity": "not_applicable",
+              "verdict": "guarded"
+            },
+            "witness": {
+              "witness_id": "cap:sha256:3c81becbeacbb9de0297a5c81ed9b64c46b849e0477129f6ff283ecc4ffcd46c",
+              "entry_field_id": "field:Query.currentUser",
+              "edges": [
+                {
+                  "edge_id": "field:Query.currentUser",
+                  "kind": "FIELD",
+                  "source_type_id": "type:Query",
+                  "field_id": "field:Query.currentUser",
+                  "target_type_id": "type:CurrentUser"
+                },
+                {
+                  "edge_id": "field:CurrentUser.devices",
+                  "kind": "FIELD",
+                  "source_type_id": "type:CurrentUser",
+                  "field_id": "field:CurrentUser.devices",
+                  "target_type_id": "type:UserDevice"
+                }
+              ],
+              "field_hop_count": 2,
+              "display_projection": "Query.currentUser -> CurrentUser.devices -> UserDevice"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "candidates": [
+    {
+      "verdict": "policy_violation_candidate",
+      "type": "Watchlist",
+      "route_id": "route:sha256:policy-watchlist",
+      "auth_context": {
+        "owner": "account_b",
+        "observer": "account_a"
+      },
+      "response": {
+        "data": {
+          "watchlist": {
+            "__typename": "Watchlist",
+            "_policyIdentity": "Watchlist:victim",
+            "_policyValue": false
+          }
+        }
+      }
+    }
+  ]
+}

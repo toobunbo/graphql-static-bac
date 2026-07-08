@@ -1,0 +1,33 @@
+{
+  "artifact_version": "1.0",
+  "schema_fingerprint": "sha256:2fa6a5f67a0fda683077797983b582514d303ab4d8326c0fc77021aaed5ccf80",
+  "analyzer_version": "0.1.0",
+  "profile": "bug-bounty",
+  "scope": ["query"],
+  "status": "complete",
+  "warnings": [],
+  "fixture": {
+    "name": "user_device",
+    "schema_subset": true,
+    "counts_are_fixture_local": true,
+    "candidate_type_ids": ["type:UserDevice"]
+  },
+  "query_reachable_type_count": 1,
+  "selected_type_count": 1,
+  "selected_sink_ref_count": 5,
+  "unselected_type_count": 0,
+  "unselected_types": [],
+  "query_unreachable_type_count": 0,
+  "query_unreachable_types": [],
+  "rule_counts": {
+    "globally_addressable": 1,
+    "sensitive_type_token": 1,
+    "sensitive_field_token": 1,
+    "sensitive_field_context": 3
+  },
+  "invariants": {
+    "node_implementers_unselected": 0,
+    "exact_path_duplicates": 0,
+    "score_breakdown_mismatches": 0
+  }
+}

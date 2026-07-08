@@ -1,0 +1,167 @@
+{
+  "contract_version": "1.0",
+  "stage": "S4",
+  "schema_fingerprint": "sha256:2fa6a5f67a0fda683077797983b582514d303ab4d8326c0fc77021aaed5ccf80",
+  "scope": ["query"],
+  "producer": {
+    "name": "graphql-static-bac",
+    "version": "0.1.0"
+  },
+  "status": "complete",
+  "warnings": [],
+  "fixture": {
+    "name": "user_device",
+    "schema_subset": true
+  },
+  "data": {
+    "scoring_profile": "bug-bounty-v1",
+    "caps": {
+      "cap:sha256:bb7413ac2803ba4d1a087dc85ed1644e71f51eafb6706b676d5e80d6f2bf5adc": {
+        "cap_id": "cap:sha256:bb7413ac2803ba4d1a087dc85ed1644e71f51eafb6706b676d5e80d6f2bf5adc",
+        "target_type_id": "type:UserDevice",
+        "target_sink_ref_ids": [
+          "sink:UserDevice",
+          "sink:UserDevice.deviceType",
+          "sink:UserDevice.lastUsedAt",
+          "sink:UserDevice.os",
+          "sink:UserDevice.userAgent"
+        ],
+        "selectors": [
+          {
+            "arg_ref": "arg:Query.node.id",
+            "root_arg_ref": "arg:Query.node.id",
+            "arg_path": "Query.node.id",
+            "input_path": [],
+            "type_ref": {
+              "display": "ID!",
+              "named_type": "ID",
+              "named_kind": "SCALAR",
+              "wrappers": ["NON_NULL"]
+            },
+            "classification": "object_selector",
+            "confidence": "high"
+          }
+        ],
+        "authz_modifiers": [],
+        "sanitizer_boundaries": [],
+        "flow": "direct_global_id",
+        "ownership_continuity": "unknown",
+        "ranking_bucket": "global_id",
+        "edge_count": 2,
+        "field_hop_count": 1,
+        "score": 6.0,
+        "score_breakdown": [
+          {"signal": "object_selector", "delta": 3.0},
+          {"signal": "global_id_track", "delta": 2.0},
+          {"signal": "direct_flow", "delta": 1.0}
+        ],
+        "confidence": "high"
+      },
+      "cap:sha256:de1c459792ac720e8e88f2c2175c88095a7041f5b651e399cf6ec238486ed135": {
+        "cap_id": "cap:sha256:de1c459792ac720e8e88f2c2175c88095a7041f5b651e399cf6ec238486ed135",
+        "target_type_id": "type:UserDevice",
+        "target_sink_ref_ids": [
+          "sink:UserDevice",
+          "sink:UserDevice.deviceType",
+          "sink:UserDevice.lastUsedAt",
+          "sink:UserDevice.os",
+          "sink:UserDevice.userAgent"
+        ],
+        "selectors": [
+          {
+            "arg_ref": "arg:Query.nodes.ids",
+            "root_arg_ref": "arg:Query.nodes.ids",
+            "arg_path": "Query.nodes.ids",
+            "input_path": [],
+            "type_ref": {
+              "display": "[ID!]!",
+              "named_type": "ID",
+              "named_kind": "SCALAR",
+              "wrappers": ["NON_NULL", "LIST", "NON_NULL"]
+            },
+            "classification": "object_selector",
+            "confidence": "high"
+          }
+        ],
+        "authz_modifiers": [],
+        "sanitizer_boundaries": [],
+        "flow": "direct_global_id",
+        "ownership_continuity": "unknown",
+        "ranking_bucket": "global_id",
+        "edge_count": 2,
+        "field_hop_count": 1,
+        "score": 6.0,
+        "score_breakdown": [
+          {"signal": "object_selector", "delta": 3.0},
+          {"signal": "global_id_track", "delta": 2.0},
+          {"signal": "direct_flow", "delta": 1.0}
+        ],
+        "confidence": "high"
+      },
+      "cap:sha256:3c81becbeacbb9de0297a5c81ed9b64c46b849e0477129f6ff283ecc4ffcd46c": {
+        "cap_id": "cap:sha256:3c81becbeacbb9de0297a5c81ed9b64c46b849e0477129f6ff283ecc4ffcd46c",
+        "target_type_id": "type:UserDevice",
+        "target_sink_ref_ids": [
+          "sink:UserDevice",
+          "sink:UserDevice.deviceType",
+          "sink:UserDevice.lastUsedAt",
+          "sink:UserDevice.os",
+          "sink:UserDevice.userAgent"
+        ],
+        "selectors": [],
+        "authz_modifiers": [],
+        "sanitizer_boundaries": [
+          {
+            "boundary_id": "boundary:self:Query.currentUser",
+            "family": "self_scope",
+            "root_edge_id": "field:Query.currentUser",
+            "confidence": "high",
+            "evidence": ["field_name:currentUser"]
+          }
+        ],
+        "flow": "no_selector",
+        "ownership_continuity": "not_applicable",
+        "ranking_bucket": "self_scoped",
+        "edge_count": 2,
+        "field_hop_count": 2,
+        "score": -2.0,
+        "score_breakdown": [
+          {"signal": "sanitizer_boundary", "boundary_id": "boundary:self:Query.currentUser", "delta": -2.0}
+        ],
+        "confidence": "medium"
+      },
+      "cap:sha256:7e98f9fe16e37b4fdbbc2b61c4ead7f41f53b596e6157d64bb161b05b9a955c1": {
+        "cap_id": "cap:sha256:7e98f9fe16e37b4fdbbc2b61c4ead7f41f53b596e6157d64bb161b05b9a955c1",
+        "target_type_id": "type:UserDevice",
+        "target_sink_ref_ids": [
+          "sink:UserDevice",
+          "sink:UserDevice.deviceType",
+          "sink:UserDevice.lastUsedAt",
+          "sink:UserDevice.os",
+          "sink:UserDevice.userAgent"
+        ],
+        "selectors": [],
+        "authz_modifiers": [],
+        "sanitizer_boundaries": [
+          {
+            "boundary_id": "boundary:self:Query.currentUser",
+            "family": "self_scope",
+            "root_edge_id": "field:Query.currentUser",
+            "confidence": "high",
+            "evidence": ["field_name:currentUser"]
+          }
+        ],
+        "flow": "no_selector",
+        "ownership_continuity": "not_applicable",
+        "ranking_bucket": "self_scoped",
+        "edge_count": 2,
+        "field_hop_count": 2,
+        "score": -2.0,
+        "score_breakdown": [
+          {"signal": "sanitizer_boundary", "boundary_id": "boundary:self:Query.currentUser", "delta": -2.0}
+        ],
+        "confidence": "medium"
+      }
+    }
+  }
+}

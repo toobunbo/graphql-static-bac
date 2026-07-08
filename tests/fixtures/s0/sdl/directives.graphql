@@ -1,0 +1,5 @@
+directive @auth(scope: String!) on FIELD_DEFINITION
+
+type Query {
+  secret: String @auth(scope: "admin")
+}

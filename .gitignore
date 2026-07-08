@@ -1,0 +1,21 @@
+/target/
+/output/
+
+# Large schema files used for local testing (not part of the public release)
+*.graphql
+*.graphqls
+!tests/**/*.graphql
+
+# Windows Zone.Identifier artifacts
+*:Zone.Identifier
+
+# Working notes not meant for the public repo
+Sample.md
+prompt.md
+sorareTech_vs_sorare_diff.md
+
+# Runtime artifacts: reversed APK sources, request templates (local only)
+/runtime/
+
+# MCP proxy config (local tooling)
+/mcp-proxy/

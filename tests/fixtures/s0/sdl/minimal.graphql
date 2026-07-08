@@ -1,0 +1,40 @@
+"Root query description"
+type Query {
+  node(id: ID!): Node
+  search(filter: SearchFilter = {limit: 10, role: USER}): [SearchResult!]!
+}
+
+interface Node {
+  id: ID!
+}
+
+type User implements Node {
+  id: ID!
+  name: String!
+  createdAt: DateTime!
+}
+
+type Team implements Node {
+  id: ID!
+  slug: String!
+}
+
+union SearchResult = User | Team
+
+input SearchFilter {
+  ownerIds: [ID!]!
+  limit: Int = 20
+  role: Role = USER
+}
+
+enum Role {
+  ADMIN
+  USER
+  OLD @deprecated(reason: "Use USER")
+}
+
+scalar DateTime
+
+extend type User {
+  email: String
+}

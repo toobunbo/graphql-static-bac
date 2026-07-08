@@ -1,0 +1,12 @@
+{
+  "data": {
+    "__schema": {
+      "queryType": {"name": "Query"},
+      "mutationType": null,
+      "subscriptionType": null,
+      "types": [
+        {"kind": "OBJECT", "name": "Query", "description": null, "interfaces": [], "possibleTypes": null, "inputFields": null, "enumValues": null, "fields": [{"name": "broken", "description": null, "args": [], "type": {"kind": "NON_NULL", "name": null, "ofType": null}}]}
+      ]
+    }
+  }
+}

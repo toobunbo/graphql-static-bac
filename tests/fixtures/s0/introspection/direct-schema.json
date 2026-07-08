@@ -1,0 +1,11 @@
+{
+  "__schema": {
+    "queryType": {"name": "Query"},
+    "mutationType": null,
+    "subscriptionType": null,
+    "types": [
+      {"kind": "OBJECT", "name": "Query", "description": null, "interfaces": [], "possibleTypes": null, "inputFields": null, "enumValues": null, "fields": [{"name": "ok", "description": null, "args": [], "type": {"kind": "SCALAR", "name": "Boolean", "ofType": null}}]},
+      {"kind": "SCALAR", "name": "Boolean", "description": null, "interfaces": [], "possibleTypes": null, "fields": null, "inputFields": null, "enumValues": null}
+    ]
+  }
+}

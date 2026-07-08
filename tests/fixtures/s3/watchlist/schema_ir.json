@@ -1,0 +1,4493 @@
+{
+  "contract_version": "1.0",
+  "stage": "S0",
+  "schema_fingerprint": "sha256:2fa6a5f67a0fda683077797983b582514d303ab4d8326c0fc77021aaed5ccf80",
+  "scope": [
+    "query"
+  ],
+  "producer": {
+    "name": "graphql-static-bac",
+    "version": "0.1.0"
+  },
+  "status": "complete",
+  "warnings": [],
+  "data": {
+    "roots": {
+      "query": "Query",
+      "mutation": null,
+      "subscription": null
+    },
+    "types": {
+      "BaseballUserSportProfile": {
+        "type_id": "type:BaseballUserSportProfile",
+        "kind": "OBJECT",
+        "description": "A Sorare Baseball user sport specific profile",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "achievementBadges": {
+            "field_id": "field:BaseballUserSportProfile.achievementBadges",
+            "name": "achievementBadges",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "[SkinShopItem]",
+              "named_type": "SkinShopItem",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "LIST"
+              ]
+            }
+          },
+          "dailyClaimTasks": {
+            "field_id": "field:BaseballUserSportProfile.dailyClaimTasks",
+            "name": "dailyClaimTasks",
+            "description": "The `daily_claim_tasks` field cannot be nested within a list.",
+            "arguments": [],
+            "return_type": {
+              "display": "[FootballManagerTask!]!",
+              "named_type": "FootballManagerTask",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "Card": {
+        "type_id": "type:Card",
+        "kind": "OBJECT",
+        "description": "A card representing a professional football player",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "activeSuspensions": {
+            "field_id": "field:Card.activeSuspensions",
+            "name": "activeSuspensions",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:Card.activeSuspensions.so5LeaderboardSlug",
+                "name": "so5LeaderboardSlug",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              }
+            ],
+            "return_type": {
+              "display": "[Suspension!]!",
+              "named_type": "Suspension",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "CardCollection": {
+        "type_id": "type:CardCollection",
+        "kind": "OBJECT",
+        "description": "A collection of cards",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "bestByCompletedAt": {
+            "field_id": "field:CardCollection.bestByCompletedAt",
+            "name": "bestByCompletedAt",
+            "description": "The `best_by_completed_at` field cannot be nested within a list.",
+            "arguments": [
+              {
+                "arg_id": "arg:CardCollection.bestByCompletedAt.after",
+                "name": "after",
+                "description": "Returns the elements in the list that come after the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:CardCollection.bestByCompletedAt.before",
+                "name": "before",
+                "description": "Returns the elements in the list that come before the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:CardCollection.bestByCompletedAt.first",
+                "name": "first",
+                "description": "Returns the first _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:CardCollection.bestByCompletedAt.last",
+                "name": "last",
+                "description": "Returns the last _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              }
+            ],
+            "return_type": {
+              "display": "UserCardCollectionConnection!",
+              "named_type": "UserCardCollectionConnection",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "slots": {
+            "field_id": "field:CardCollection.slots",
+            "name": "slots",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "[CardCollectionSlot!]!",
+              "named_type": "CardCollectionSlot",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "CardCollectionCard": {
+        "type_id": "type:CardCollectionCard",
+        "kind": "OBJECT",
+        "description": "A card in a collection of cards",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "cardCollection": {
+            "field_id": "field:CardCollectionCard.cardCollection",
+            "name": "cardCollection",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "CardCollection!",
+              "named_type": "CardCollection",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "CardCollectionRequirement": {
+        "type_id": "type:CardCollectionRequirement",
+        "kind": "OBJECT",
+        "description": "A card collection requirement on a shop item",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "cardCollection": {
+            "field_id": "field:CardCollectionRequirement.cardCollection",
+            "name": "cardCollection",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "CardCollection!",
+              "named_type": "CardCollection",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "CardCollectionSlot": {
+        "type_id": "type:CardCollectionSlot",
+        "kind": "OBJECT",
+        "description": "A slot in a collection of cards",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "cardCollectionCards": {
+            "field_id": "field:CardCollectionSlot.cardCollectionCards",
+            "name": "cardCollectionCards",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:CardCollectionSlot.cardCollectionCards.forUserSlug",
+                "name": "forUserSlug",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "String!",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "[CardCollectionCard!]!",
+              "named_type": "CardCollectionCard",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          },
+          "cardPacks": {
+            "field_id": "field:CardCollectionSlot.cardPacks",
+            "name": "cardPacks",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "[CardPack!]",
+              "named_type": "CardPack",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "CardConnection": {
+        "type_id": "type:CardConnection",
+        "kind": "OBJECT",
+        "description": "The connection type for Card.",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "nodes": {
+            "field_id": "field:CardConnection.nodes",
+            "name": "nodes",
+            "description": "A list of nodes.",
+            "arguments": [],
+            "return_type": {
+              "display": "[Card!]!",
+              "named_type": "Card",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "CardPack": {
+        "type_id": "type:CardPack",
+        "kind": "OBJECT",
+        "description": "A card pack",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "competition": {
+            "field_id": "field:CardPack.competition",
+            "name": "competition",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "Competition",
+              "named_type": "Competition",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "CardSetRoot": {
+        "type_id": "type:CardSetRoot",
+        "kind": "OBJECT",
+        "description": "The Card Set fields",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "squad": {
+            "field_id": "field:CardSetRoot.squad",
+            "name": "squad",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:CardSetRoot.squad.joinSecret",
+                "name": "joinSecret",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "String!",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "Squad!",
+              "named_type": "Squad",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "Club": {
+        "type_id": "type:Club",
+        "kind": "OBJECT",
+        "description": null,
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "activeCompetitions": {
+            "field_id": "field:Club.activeCompetitions",
+            "name": "activeCompetitions",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "[Competition!]!",
+              "named_type": "Competition",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          },
+          "activeMemberships": {
+            "field_id": "field:Club.activeMemberships",
+            "name": "activeMemberships",
+            "description": "The `active_memberships` field cannot be nested within a list.",
+            "arguments": [
+              {
+                "arg_id": "arg:Club.activeMemberships.after",
+                "name": "after",
+                "description": "Returns the elements in the list that come after the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Club.activeMemberships.before",
+                "name": "before",
+                "description": "Returns the elements in the list that come before the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Club.activeMemberships.first",
+                "name": "first",
+                "description": "Returns the first _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Club.activeMemberships.last",
+                "name": "last",
+                "description": "Returns the last _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              }
+            ],
+            "return_type": {
+              "display": "MembershipConnection!",
+              "named_type": "MembershipConnection",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "ClubConnection": {
+        "type_id": "type:ClubConnection",
+        "kind": "OBJECT",
+        "description": "The connection type for Club.",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "nodes": {
+            "field_id": "field:ClubConnection.nodes",
+            "name": "nodes",
+            "description": "A list of nodes.",
+            "arguments": [],
+            "return_type": {
+              "display": "[Club!]!",
+              "named_type": "Club",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "Competition": {
+        "type_id": "type:Competition",
+        "kind": "OBJECT",
+        "description": "A professional football competition",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "clubs": {
+            "field_id": "field:Competition.clubs",
+            "name": "clubs",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:Competition.clubs.after",
+                "name": "after",
+                "description": "Returns the elements in the list that come after the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Competition.clubs.before",
+                "name": "before",
+                "description": "Returns the elements in the list that come before the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Competition.clubs.direction",
+                "name": "direction",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "SortingOption",
+                  "named_type": "SortingOption",
+                  "named_kind": "ENUM",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Competition.clubs.first",
+                "name": "first",
+                "description": "Returns the first _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Competition.clubs.last",
+                "name": "last",
+                "description": "Returns the last _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Competition.clubs.sortType",
+                "name": "sortType",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "PopularSortingOption",
+                  "named_type": "PopularSortingOption",
+                  "named_kind": "ENUM",
+                  "wrappers": []
+                }
+              }
+            ],
+            "return_type": {
+              "display": "ClubConnection!",
+              "named_type": "ClubConnection",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "futureGames": {
+            "field_id": "field:Competition.futureGames",
+            "name": "futureGames",
+            "description": "The `future_games` field cannot be nested within a list.",
+            "arguments": [
+              {
+                "arg_id": "arg:Competition.futureGames.after",
+                "name": "after",
+                "description": "Returns the elements in the list that come after the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Competition.futureGames.before",
+                "name": "before",
+                "description": "Returns the elements in the list that come before the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Competition.futureGames.first",
+                "name": "first",
+                "description": "Returns the first _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Competition.futureGames.last",
+                "name": "last",
+                "description": "Returns the last _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              }
+            ],
+            "return_type": {
+              "display": "GameConnection!",
+              "named_type": "GameConnection",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "CompetitionGames": {
+        "type_id": "type:CompetitionGames",
+        "kind": "OBJECT",
+        "description": null,
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "competition": {
+            "field_id": "field:CompetitionGames.competition",
+            "name": "competition",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "Competition!",
+              "named_type": "Competition",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "Config": {
+        "type_id": "type:Config",
+        "kind": "OBJECT",
+        "description": "The frontend config",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "so5": {
+            "field_id": "field:Config.so5",
+            "name": "so5",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "So5Config!",
+              "named_type": "So5Config",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "CurrentUser": {
+        "type_id": "type:CurrentUser",
+        "kind": "OBJECT",
+        "description": "Current Sorare user",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "accountEntries": {
+            "field_id": "field:CurrentUser.accountEntries",
+            "name": "accountEntries",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:CurrentUser.accountEntries.after",
+                "name": "after",
+                "description": "Returns the elements in the list that come after the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:CurrentUser.accountEntries.before",
+                "name": "before",
+                "description": "Returns the elements in the list that come before the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:CurrentUser.accountEntries.currencies",
+                "name": "currencies",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "[SupportedCurrency!]",
+                  "named_type": "SupportedCurrency",
+                  "named_kind": "ENUM",
+                  "wrappers": [
+                    "LIST",
+                    "NON_NULL"
+                  ]
+                }
+              },
+              {
+                "arg_id": "arg:CurrentUser.accountEntries.currencyType",
+                "name": "currencyType",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Currency",
+                  "named_type": "Currency",
+                  "named_kind": "ENUM",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:CurrentUser.accountEntries.endDate",
+                "name": "endDate",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "ISO8601DateTime",
+                  "named_type": "ISO8601DateTime",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:CurrentUser.accountEntries.entryType",
+                "name": "entryType",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "[UserAccountEntryEntry!]",
+                  "named_type": "UserAccountEntryEntry",
+                  "named_kind": "ENUM",
+                  "wrappers": [
+                    "LIST",
+                    "NON_NULL"
+                  ]
+                }
+              },
+              {
+                "arg_id": "arg:CurrentUser.accountEntries.first",
+                "name": "first",
+                "description": "Returns the first _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:CurrentUser.accountEntries.last",
+                "name": "last",
+                "description": "Returns the last _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:CurrentUser.accountEntries.significant",
+                "name": "significant",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Boolean",
+                  "named_type": "Boolean",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:CurrentUser.accountEntries.sortType",
+                "name": "sortType",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "SortingOption",
+                  "named_type": "SortingOption",
+                  "named_kind": "ENUM",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:CurrentUser.accountEntries.startDate",
+                "name": "startDate",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "ISO8601DateTime",
+                  "named_type": "ISO8601DateTime",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              }
+            ],
+            "return_type": {
+              "display": "UserAccountEntryConnection!",
+              "named_type": "UserAccountEntryConnection",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "myWatchlists": {
+            "field_id": "field:CurrentUser.myWatchlists",
+            "name": "myWatchlists",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:CurrentUser.myWatchlists.filter",
+                "name": "filter",
+                "description": null,
+                "default_value": "OWNED_WATCHLISTS",
+                "type_ref": {
+                  "display": "WatchlistFilter",
+                  "named_type": "WatchlistFilter",
+                  "named_kind": "ENUM",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:CurrentUser.myWatchlists.query",
+                "name": "query",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:CurrentUser.myWatchlists.sport",
+                "name": "sport",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Sport!",
+                  "named_type": "Sport",
+                  "named_kind": "ENUM",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "[Watchlist!]",
+              "named_type": "Watchlist",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          },
+          "publicWatchlists": {
+            "field_id": "field:CurrentUser.publicWatchlists",
+            "name": "publicWatchlists",
+            "description": "The `public_watchlists` field cannot be nested within a list.",
+            "arguments": [
+              {
+                "arg_id": "arg:CurrentUser.publicWatchlists.after",
+                "name": "after",
+                "description": "Returns the elements in the list that come after the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:CurrentUser.publicWatchlists.before",
+                "name": "before",
+                "description": "Returns the elements in the list that come before the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:CurrentUser.publicWatchlists.first",
+                "name": "first",
+                "description": "Returns the first _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:CurrentUser.publicWatchlists.last",
+                "name": "last",
+                "description": "Returns the last _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:CurrentUser.publicWatchlists.sport",
+                "name": "sport",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Sport!",
+                  "named_type": "Sport",
+                  "named_kind": "ENUM",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "WatchlistConnection",
+              "named_type": "WatchlistConnection",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "Deck": {
+        "type_id": "type:Deck",
+        "kind": "OBJECT",
+        "description": "A set of cards",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "user": {
+            "field_id": "field:Deck.user",
+            "name": "user",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "User",
+              "named_type": "User",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "FootballManagerTask": {
+        "type_id": "type:FootballManagerTask",
+        "kind": "OBJECT",
+        "description": "A football manager task",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "probabilisticBundle": {
+            "field_id": "field:FootballManagerTask.probabilisticBundle",
+            "name": "probabilisticBundle",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "ProbabilisticBundle",
+              "named_type": "ProbabilisticBundle",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "FootballRoot": {
+        "type_id": "type:FootballRoot",
+        "kind": "OBJECT",
+        "description": "The Football fields",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "allCards": {
+            "field_id": "field:FootballRoot.allCards",
+            "name": "allCards",
+            "description": "Get a list of all cards",
+            "arguments": [
+              {
+                "arg_id": "arg:FootballRoot.allCards.after",
+                "name": "after",
+                "description": "Returns the elements in the list that come after the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.age",
+                "name": "age",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.assetIds",
+                "name": "assetIds",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "[String!]",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "LIST",
+                    "NON_NULL"
+                  ]
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.before",
+                "name": "before",
+                "description": "Returns the elements in the list that come before the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.classicOnly",
+                "name": "classicOnly",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Boolean",
+                  "named_type": "Boolean",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.customCardEditionName",
+                "name": "customCardEditionName",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.first",
+                "name": "first",
+                "description": "Returns the first _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.inActiveCompetitions",
+                "name": "inActiveCompetitions",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "[String!]",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "LIST",
+                    "NON_NULL"
+                  ]
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.inOrderOfRarities",
+                "name": "inOrderOfRarities",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Boolean",
+                  "named_type": "Boolean",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.inSeasonEligible",
+                "name": "inSeasonEligible",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Boolean",
+                  "named_type": "Boolean",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.last",
+                "name": "last",
+                "description": "Returns the last _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.owned",
+                "name": "owned",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Boolean",
+                  "named_type": "Boolean",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.ownedByMe",
+                "name": "ownedByMe",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Boolean",
+                  "named_type": "Boolean",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.ownedSinceAfter",
+                "name": "ownedSinceAfter",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "ISO8601DateTime",
+                  "named_type": "ISO8601DateTime",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.playerSlugs",
+                "name": "playerSlugs",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "[String!]",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "LIST",
+                    "NON_NULL"
+                  ]
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.positions",
+                "name": "positions",
+                "description": "positions of the card capitalized",
+                "default_value": null,
+                "type_ref": {
+                  "display": "[Position!]",
+                  "named_type": "Position",
+                  "named_kind": "ENUM",
+                  "wrappers": [
+                    "LIST",
+                    "NON_NULL"
+                  ]
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.rarities",
+                "name": "rarities",
+                "description": "rarities of the card in lowercase",
+                "default_value": null,
+                "type_ref": {
+                  "display": "[Rarity!]",
+                  "named_type": "Rarity",
+                  "named_kind": "ENUM",
+                  "wrappers": [
+                    "LIST",
+                    "NON_NULL"
+                  ]
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.recentlyOwnedFirst",
+                "name": "recentlyOwnedFirst",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Boolean",
+                  "named_type": "Boolean",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.revealable",
+                "name": "revealable",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Boolean",
+                  "named_type": "Boolean",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.revealableFirst",
+                "name": "revealableFirst",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Boolean",
+                  "named_type": "Boolean",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.seasonStartYears",
+                "name": "seasonStartYears",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "[Int!]",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "LIST",
+                    "NON_NULL"
+                  ]
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.serialNumber",
+                "name": "serialNumber",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.shirtNumber",
+                "name": "shirtNumber",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.slugs",
+                "name": "slugs",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "[String!]",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "LIST",
+                    "NON_NULL"
+                  ]
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.sorts",
+                "name": "sorts",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "[CardSort!]",
+                  "named_type": "CardSort",
+                  "named_kind": "ENUM",
+                  "wrappers": [
+                    "LIST",
+                    "NON_NULL"
+                  ]
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.sport",
+                "name": "sport",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Sport",
+                  "named_type": "Sport",
+                  "named_kind": "ENUM",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.teamSlugs",
+                "name": "teamSlugs",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "[String!]",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "LIST",
+                    "NON_NULL"
+                  ]
+                }
+              },
+              {
+                "arg_id": "arg:FootballRoot.allCards.withinDeckFirst",
+                "name": "withinDeckFirst",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              }
+            ],
+            "return_type": {
+              "display": "CardConnection!",
+              "named_type": "CardConnection",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "ForYouRoot": {
+        "type_id": "type:ForYouRoot",
+        "kind": "OBJECT",
+        "description": "The For You fields",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "featuredLeagues": {
+            "field_id": "field:ForYouRoot.featuredLeagues",
+            "name": "featuredLeagues",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:ForYouRoot.featuredLeagues.sport",
+                "name": "sport",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Sport!",
+                  "named_type": "Sport",
+                  "named_kind": "ENUM",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "[So5League!]!",
+              "named_type": "So5League",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "Game": {
+        "type_id": "type:Game",
+        "kind": "OBJECT",
+        "description": "A professional football game",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "awayFormation": {
+            "field_id": "field:Game.awayFormation",
+            "name": "awayFormation",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "TeamFormation!",
+              "named_type": "TeamFormation",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "mySo5Appearances": {
+            "field_id": "field:Game.mySo5Appearances",
+            "name": "mySo5Appearances",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "[So5Appearance!]!",
+              "named_type": "So5Appearance",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "GameConnection": {
+        "type_id": "type:GameConnection",
+        "kind": "OBJECT",
+        "description": "The connection type for Game.",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "nodes": {
+            "field_id": "field:GameConnection.nodes",
+            "name": "nodes",
+            "description": "A list of nodes.",
+            "arguments": [],
+            "return_type": {
+              "display": "[Game!]!",
+              "named_type": "Game",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "ManagerTeam": {
+        "type_id": "type:ManagerTeam",
+        "kind": "OBJECT",
+        "description": "A manager team",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "divisionChangingSo5Lineup": {
+            "field_id": "field:ManagerTeam.divisionChangingSo5Lineup",
+            "name": "divisionChangingSo5Lineup",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "So5Lineup",
+              "named_type": "So5Lineup",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "MarketRoot": {
+        "type_id": "type:MarketRoot",
+        "kind": "OBJECT",
+        "description": "The Market fields",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "activeWheelConfig": {
+            "field_id": "field:MarketRoot.activeWheelConfig",
+            "name": "activeWheelConfig",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:MarketRoot.activeWheelConfig.rarity",
+                "name": "rarity",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Rarity!",
+                  "named_type": "Rarity",
+                  "named_kind": "ENUM",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              },
+              {
+                "arg_id": "arg:MarketRoot.activeWheelConfig.sport",
+                "name": "sport",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Sport!",
+                  "named_type": "Sport",
+                  "named_kind": "ENUM",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "WheelConfig",
+              "named_type": "WheelConfig",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          },
+          "publicWatchlists": {
+            "field_id": "field:MarketRoot.publicWatchlists",
+            "name": "publicWatchlists",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:MarketRoot.publicWatchlists.after",
+                "name": "after",
+                "description": "Returns the elements in the list that come after the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:MarketRoot.publicWatchlists.before",
+                "name": "before",
+                "description": "Returns the elements in the list that come before the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:MarketRoot.publicWatchlists.first",
+                "name": "first",
+                "description": "Returns the first _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:MarketRoot.publicWatchlists.last",
+                "name": "last",
+                "description": "Returns the last _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:MarketRoot.publicWatchlists.so5CompetitionSlug",
+                "name": "so5CompetitionSlug",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:MarketRoot.publicWatchlists.sortBy",
+                "name": "sortBy",
+                "description": null,
+                "default_value": "MOST_FOLLOWED",
+                "type_ref": {
+                  "display": "WatchlistSorting",
+                  "named_type": "WatchlistSorting",
+                  "named_kind": "ENUM",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:MarketRoot.publicWatchlists.sport",
+                "name": "sport",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Sport!",
+                  "named_type": "Sport",
+                  "named_kind": "ENUM",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "WatchlistConnection!",
+              "named_type": "WatchlistConnection",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "sorareWatchlists": {
+            "field_id": "field:MarketRoot.sorareWatchlists",
+            "name": "sorareWatchlists",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:MarketRoot.sorareWatchlists.sport",
+                "name": "sport",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Sport!",
+                  "named_type": "Sport",
+                  "named_kind": "ENUM",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "[Watchlist!]!",
+              "named_type": "Watchlist",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          },
+          "watchlist": {
+            "field_id": "field:MarketRoot.watchlist",
+            "name": "watchlist",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:MarketRoot.watchlist.id",
+                "name": "id",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "ID!",
+                  "named_type": "ID",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "Watchlist",
+              "named_type": "Watchlist",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "Membership": {
+        "type_id": "type:Membership",
+        "kind": "OBJECT",
+        "description": "An object representing a club for which a player has played during a certain time.",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "player": {
+            "field_id": "field:Membership.player",
+            "name": "player",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "Player!",
+              "named_type": "Player",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "MembershipConnection": {
+        "type_id": "type:MembershipConnection",
+        "kind": "OBJECT",
+        "description": "The connection type for Membership.",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "nodes": {
+            "field_id": "field:MembershipConnection.nodes",
+            "name": "nodes",
+            "description": "A list of nodes.",
+            "arguments": [],
+            "return_type": {
+              "display": "[Membership!]!",
+              "named_type": "Membership",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "NationalTeam": {
+        "type_id": "type:NationalTeam",
+        "kind": "OBJECT",
+        "description": null,
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "games": {
+            "field_id": "field:NationalTeam.games",
+            "name": "games",
+            "description": "The `games` field cannot be nested within a list.",
+            "arguments": [
+              {
+                "arg_id": "arg:NationalTeam.games.after",
+                "name": "after",
+                "description": "Returns the elements in the list that come after the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:NationalTeam.games.before",
+                "name": "before",
+                "description": "Returns the elements in the list that come before the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:NationalTeam.games.endDate",
+                "name": "endDate",
+                "description": "End time (inclusive) of the game.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "ISO8601DateTime!",
+                  "named_type": "ISO8601DateTime",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              },
+              {
+                "arg_id": "arg:NationalTeam.games.first",
+                "name": "first",
+                "description": "Returns the first _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:NationalTeam.games.last",
+                "name": "last",
+                "description": "Returns the last _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:NationalTeam.games.startDate",
+                "name": "startDate",
+                "description": "Start time (inclusive) of the game.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "ISO8601DateTime!",
+                  "named_type": "ISO8601DateTime",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "GameConnection!",
+              "named_type": "GameConnection",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "Node": {
+        "type_id": "type:Node",
+        "kind": "INTERFACE",
+        "description": "An object with an ID.",
+        "interfaces": [],
+        "possible_types": [
+          "Watchlist"
+        ],
+        "fields": {},
+        "input_fields": {},
+        "enum_values": []
+      },
+      "Player": {
+        "type_id": "type:Player",
+        "kind": "OBJECT",
+        "description": "A professional football player",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "activeNationalTeam": {
+            "field_id": "field:Player.activeNationalTeam",
+            "name": "activeNationalTeam",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "NationalTeam",
+              "named_type": "NationalTeam",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          },
+          "allSo5Scores": {
+            "field_id": "field:Player.allSo5Scores",
+            "name": "allSo5Scores",
+            "description": "All player So5Scores ordered by descending game date",
+            "arguments": [
+              {
+                "arg_id": "arg:Player.allSo5Scores.after",
+                "name": "after",
+                "description": "Returns the elements in the list that come after the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Player.allSo5Scores.before",
+                "name": "before",
+                "description": "Returns the elements in the list that come before the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Player.allSo5Scores.first",
+                "name": "first",
+                "description": "Returns the first _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Player.allSo5Scores.last",
+                "name": "last",
+                "description": "Returns the last _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Player.allSo5Scores.position",
+                "name": "position",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Position",
+                  "named_type": "Position",
+                  "named_kind": "ENUM",
+                  "wrappers": []
+                }
+              }
+            ],
+            "return_type": {
+              "display": "So5ScoreConnection!",
+              "named_type": "So5ScoreConnection",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "publicWatchlists": {
+            "field_id": "field:Player.publicWatchlists",
+            "name": "publicWatchlists",
+            "description": "The `public_watchlists` field cannot be nested within a list.",
+            "arguments": [
+              {
+                "arg_id": "arg:Player.publicWatchlists.after",
+                "name": "after",
+                "description": "Returns the elements in the list that come after the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Player.publicWatchlists.before",
+                "name": "before",
+                "description": "Returns the elements in the list that come before the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Player.publicWatchlists.first",
+                "name": "first",
+                "description": "Returns the first _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Player.publicWatchlists.last",
+                "name": "last",
+                "description": "Returns the last _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              }
+            ],
+            "return_type": {
+              "display": "WatchlistConnection",
+              "named_type": "WatchlistConnection",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "PlayerGameStats": {
+        "type_id": "type:PlayerGameStats",
+        "kind": "OBJECT",
+        "description": "Stats of a player for a game",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "myBestSo5Appearance": {
+            "field_id": "field:PlayerGameStats.myBestSo5Appearance",
+            "name": "myBestSo5Appearance",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "So5Appearance",
+              "named_type": "So5Appearance",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "ProbabilisticBundle": {
+        "type_id": "type:ProbabilisticBundle",
+        "kind": "OBJECT",
+        "description": "A probabilistic bundle",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "config": {
+            "field_id": "field:ProbabilisticBundle.config",
+            "name": "config",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "ProbabilisticBundleConfig!",
+              "named_type": "ProbabilisticBundleConfig",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "ProbabilisticBundleConfig": {
+        "type_id": "type:ProbabilisticBundleConfig",
+        "kind": "OBJECT",
+        "description": "A probabilistic bundle config",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "slots": {
+            "field_id": "field:ProbabilisticBundleConfig.slots",
+            "name": "slots",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "[ProbabilisticBundleConfigSlot!]!",
+              "named_type": "ProbabilisticBundleConfigSlot",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "ProbabilisticBundleConfigSlot": {
+        "type_id": "type:ProbabilisticBundleConfigSlot",
+        "kind": "OBJECT",
+        "description": "A probabilistic bundle config slot",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "probableConfigs": {
+            "field_id": "field:ProbabilisticBundleConfigSlot.probableConfigs",
+            "name": "probableConfigs",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "[ProbabilisticBundleSlotConfig!]!",
+              "named_type": "ProbabilisticBundleSlotConfig",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "ProbabilisticBundleSlotConfig": {
+        "type_id": "type:ProbabilisticBundleSlotConfig",
+        "kind": "OBJECT",
+        "description": "A probabilistic bundle slot config",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "cardPack": {
+            "field_id": "field:ProbabilisticBundleSlotConfig.cardPack",
+            "name": "cardPack",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "CardPack",
+              "named_type": "CardPack",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "Query": {
+        "type_id": "type:Query",
+        "kind": "OBJECT",
+        "description": null,
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "cardCollection": {
+            "field_id": "field:Query.cardCollection",
+            "name": "cardCollection",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:Query.cardCollection.slug",
+                "name": "slug",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "String!",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "CardCollection!",
+              "named_type": "CardCollection",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "cardCollectionSlot": {
+            "field_id": "field:Query.cardCollectionSlot",
+            "name": "cardCollectionSlot",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:Query.cardCollectionSlot.id",
+                "name": "id",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "ID!",
+                  "named_type": "ID",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "CardCollectionSlot!",
+              "named_type": "CardCollectionSlot",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "cardSet": {
+            "field_id": "field:Query.cardSet",
+            "name": "cardSet",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "CardSetRoot!",
+              "named_type": "CardSetRoot",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "competitionGames": {
+            "field_id": "field:Query.competitionGames",
+            "name": "competitionGames",
+            "description": "Get sport games for a window of maximum 2 days.",
+            "arguments": [
+              {
+                "arg_id": "arg:Query.competitionGames.fromDate",
+                "name": "fromDate",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "ISO8601DateTime",
+                  "named_type": "ISO8601DateTime",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Query.competitionGames.sport",
+                "name": "sport",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Sport!",
+                  "named_type": "Sport",
+                  "named_kind": "ENUM",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              },
+              {
+                "arg_id": "arg:Query.competitionGames.toDate",
+                "name": "toDate",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "ISO8601DateTime",
+                  "named_type": "ISO8601DateTime",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              }
+            ],
+            "return_type": {
+              "display": "[CompetitionGames!]!",
+              "named_type": "CompetitionGames",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          },
+          "config": {
+            "field_id": "field:Query.config",
+            "name": "config",
+            "description": "Get config",
+            "arguments": [],
+            "return_type": {
+              "display": "Config!",
+              "named_type": "Config",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "currentUser": {
+            "field_id": "field:Query.currentUser",
+            "name": "currentUser",
+            "description": "Fetch the current user.",
+            "arguments": [],
+            "return_type": {
+              "display": "CurrentUser",
+              "named_type": "CurrentUser",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          },
+          "deck": {
+            "field_id": "field:Query.deck",
+            "name": "deck",
+            "description": "Get a deck of cards",
+            "arguments": [
+              {
+                "arg_id": "arg:Query.deck.slug",
+                "name": "slug",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "String!",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "Deck!",
+              "named_type": "Deck",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "football": {
+            "field_id": "field:Query.football",
+            "name": "football",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "FootballRoot!",
+              "named_type": "FootballRoot",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "forYou": {
+            "field_id": "field:Query.forYou",
+            "name": "forYou",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "ForYouRoot!",
+              "named_type": "ForYouRoot",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "market": {
+            "field_id": "field:Query.market",
+            "name": "market",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "MarketRoot!",
+              "named_type": "MarketRoot",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "node": {
+            "field_id": "field:Query.node",
+            "name": "node",
+            "description": "Fetches an object given its ID.",
+            "arguments": [
+              {
+                "arg_id": "arg:Query.node.id",
+                "name": "id",
+                "description": "ID of the object.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "ID!",
+                  "named_type": "ID",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "Node",
+              "named_type": "Node",
+              "named_kind": "INTERFACE",
+              "wrappers": []
+            }
+          },
+          "nodes": {
+            "field_id": "field:Query.nodes",
+            "name": "nodes",
+            "description": "Fetches a list of objects given a list of IDs.",
+            "arguments": [
+              {
+                "arg_id": "arg:Query.nodes.ids",
+                "name": "ids",
+                "description": "IDs of the objects.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "[ID!]!",
+                  "named_type": "ID",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL",
+                    "LIST",
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "[Node]!",
+              "named_type": "Node",
+              "named_kind": "INTERFACE",
+              "wrappers": [
+                "NON_NULL",
+                "LIST"
+              ]
+            }
+          },
+          "probabilisticBundle": {
+            "field_id": "field:Query.probabilisticBundle",
+            "name": "probabilisticBundle",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:Query.probabilisticBundle.id",
+                "name": "id",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "ID!",
+                  "named_type": "ID",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "ProbabilisticBundle!",
+              "named_type": "ProbabilisticBundle",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "probabilisticBundleConfig": {
+            "field_id": "field:Query.probabilisticBundleConfig",
+            "name": "probabilisticBundleConfig",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:Query.probabilisticBundleConfig.id",
+                "name": "id",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "ID!",
+                  "named_type": "ID",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "ProbabilisticBundleConfig!",
+              "named_type": "ProbabilisticBundleConfig",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "referralLeaderboard": {
+            "field_id": "field:Query.referralLeaderboard",
+            "name": "referralLeaderboard",
+            "description": "Returns a referral leaderboard for the specified referral special event",
+            "arguments": [
+              {
+                "arg_id": "arg:Query.referralLeaderboard.referralSpecialEventId",
+                "name": "referralSpecialEventId",
+                "description": "Identifier of the referral special event whose leaderboard is to be returned",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String!",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "ReferralLeaderboard",
+              "named_type": "ReferralLeaderboard",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          },
+          "so5": {
+            "field_id": "field:Query.so5",
+            "name": "so5",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "So5Root!",
+              "named_type": "So5Root",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "starkwareAccount": {
+            "field_id": "field:Query.starkwareAccount",
+            "name": "starkwareAccount",
+            "description": "Get a Starkware account.",
+            "arguments": [
+              {
+                "arg_id": "arg:Query.starkwareAccount.starkKey",
+                "name": "starkKey",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "String!",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "StarkwareAccount!",
+              "named_type": "StarkwareAccount",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "tokens": {
+            "field_id": "field:Query.tokens",
+            "name": "tokens",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "TokenRoot!",
+              "named_type": "TokenRoot",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "user": {
+            "field_id": "field:Query.user",
+            "name": "user",
+            "description": "Get a user.",
+            "arguments": [
+              {
+                "arg_id": "arg:Query.user.slug",
+                "name": "slug",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "String!",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "User!",
+              "named_type": "User",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "userById": {
+            "field_id": "field:Query.userById",
+            "name": "userById",
+            "description": "Get a user by ID.",
+            "arguments": [
+              {
+                "arg_id": "arg:Query.userById.id",
+                "name": "id",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "String!",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "User!",
+              "named_type": "User",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "userCardCollection": {
+            "field_id": "field:Query.userCardCollection",
+            "name": "userCardCollection",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:Query.userCardCollection.id",
+                "name": "id",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "String!",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "UserCardCollection!",
+              "named_type": "UserCardCollection",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "users": {
+            "field_id": "field:Query.users",
+            "name": "users",
+            "description": "Get a list of users.",
+            "arguments": [
+              {
+                "arg_id": "arg:Query.users.slugs",
+                "name": "slugs",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "[String!]!",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL",
+                    "LIST",
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "[User!]!",
+              "named_type": "User",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          },
+          "usersPaginated": {
+            "field_id": "field:Query.usersPaginated",
+            "name": "usersPaginated",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:Query.usersPaginated.after",
+                "name": "after",
+                "description": "Returns the elements in the list that come after the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Query.usersPaginated.before",
+                "name": "before",
+                "description": "Returns the elements in the list that come before the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Query.usersPaginated.first",
+                "name": "first",
+                "description": "Returns the first _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Query.usersPaginated.followingOnly",
+                "name": "followingOnly",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Boolean",
+                  "named_type": "Boolean",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Query.usersPaginated.last",
+                "name": "last",
+                "description": "Returns the last _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:Query.usersPaginated.query",
+                "name": "query",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              }
+            ],
+            "return_type": {
+              "display": "UserConnection!",
+              "named_type": "UserConnection",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "ReferralLeaderboard": {
+        "type_id": "type:ReferralLeaderboard",
+        "kind": "OBJECT",
+        "description": null,
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "rankings": {
+            "field_id": "field:ReferralLeaderboard.rankings",
+            "name": "rankings",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:ReferralLeaderboard.rankings.after",
+                "name": "after",
+                "description": "Returns the elements in the list that come after the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:ReferralLeaderboard.rankings.before",
+                "name": "before",
+                "description": "Returns the elements in the list that come before the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:ReferralLeaderboard.rankings.first",
+                "name": "first",
+                "description": "Returns the first _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:ReferralLeaderboard.rankings.last",
+                "name": "last",
+                "description": "Returns the last _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              }
+            ],
+            "return_type": {
+              "display": "ReferralLeaderboardRankingConnection!",
+              "named_type": "ReferralLeaderboardRankingConnection",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "ReferralLeaderboardRanking": {
+        "type_id": "type:ReferralLeaderboardRanking",
+        "kind": "OBJECT",
+        "description": null,
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "user": {
+            "field_id": "field:ReferralLeaderboardRanking.user",
+            "name": "user",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "User!",
+              "named_type": "User",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "ReferralLeaderboardRankingConnection": {
+        "type_id": "type:ReferralLeaderboardRankingConnection",
+        "kind": "OBJECT",
+        "description": "The connection type for ReferralLeaderboardRanking.",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "nodes": {
+            "field_id": "field:ReferralLeaderboardRankingConnection.nodes",
+            "name": "nodes",
+            "description": "A list of nodes.",
+            "arguments": [],
+            "return_type": {
+              "display": "[ReferralLeaderboardRanking!]!",
+              "named_type": "ReferralLeaderboardRanking",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "RewardPoolShare": {
+        "type_id": "type:RewardPoolShare",
+        "kind": "OBJECT",
+        "description": "A Reward Pool Share",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "user": {
+            "field_id": "field:RewardPoolShare.user",
+            "name": "user",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "User!",
+              "named_type": "User",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "SkinShopItem": {
+        "type_id": "type:SkinShopItem",
+        "kind": "OBJECT",
+        "description": null,
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "cardCollectionRequirements": {
+            "field_id": "field:SkinShopItem.cardCollectionRequirements",
+            "name": "cardCollectionRequirements",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "[CardCollectionRequirement!]!",
+              "named_type": "CardCollectionRequirement",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "So5Appearance": {
+        "type_id": "type:So5Appearance",
+        "kind": "OBJECT",
+        "description": "A SO5 Appearance - a card selected in a team for a SO5 fixture",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "so5Fixture": {
+            "field_id": "field:So5Appearance.so5Fixture",
+            "name": "so5Fixture",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "So5Fixture!",
+              "named_type": "So5Fixture",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "So5Campaign": {
+        "type_id": "type:So5Campaign",
+        "kind": "OBJECT",
+        "description": "A So5 Campaign",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "so5Leaderboards": {
+            "field_id": "field:So5Campaign.so5Leaderboards",
+            "name": "so5Leaderboards",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "[So5Leaderboard!]",
+              "named_type": "So5Leaderboard",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "So5Config": {
+        "type_id": "type:So5Config",
+        "kind": "OBJECT",
+        "description": "So5 Global Config",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "cardCollections": {
+            "field_id": "field:So5Config.cardCollections",
+            "name": "cardCollections",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "[CardCollection!]!",
+              "named_type": "CardCollection",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "So5Fixture": {
+        "type_id": "type:So5Fixture",
+        "kind": "OBJECT",
+        "description": "A SO5 fixture",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "myFriendsFixtureResults": {
+            "field_id": "field:So5Fixture.myFriendsFixtureResults",
+            "name": "myFriendsFixtureResults",
+            "description": "The `my_friends_fixture_results` field cannot be nested within a list.",
+            "arguments": [
+              {
+                "arg_id": "arg:So5Fixture.myFriendsFixtureResults.after",
+                "name": "after",
+                "description": "Returns the elements in the list that come after the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:So5Fixture.myFriendsFixtureResults.before",
+                "name": "before",
+                "description": "Returns the elements in the list that come before the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:So5Fixture.myFriendsFixtureResults.first",
+                "name": "first",
+                "description": "Returns the first _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:So5Fixture.myFriendsFixtureResults.last",
+                "name": "last",
+                "description": "Returns the last _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              }
+            ],
+            "return_type": {
+              "display": "UserFixtureResultsConnection",
+              "named_type": "UserFixtureResultsConnection",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "So5Leaderboard": {
+        "type_id": "type:So5Leaderboard",
+        "kind": "OBJECT",
+        "description": "A So5 Leaderboard",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "displayedRules": {
+            "field_id": "field:So5Leaderboard.displayedRules",
+            "name": "displayedRules",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "So5Rules",
+              "named_type": "So5Rules",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "So5LeaderboardContender": {
+        "type_id": "type:So5LeaderboardContender",
+        "kind": "OBJECT",
+        "description": "A ManagerTeam with optional So5Lineup, or a So5Lineup without ManagerTeam",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "managerTeam": {
+            "field_id": "field:So5LeaderboardContender.managerTeam",
+            "name": "managerTeam",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "ManagerTeam",
+              "named_type": "ManagerTeam",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "So5LeaderboardContenderConnection": {
+        "type_id": "type:So5LeaderboardContenderConnection",
+        "kind": "OBJECT",
+        "description": "The connection type for So5LeaderboardContender.",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "nodes": {
+            "field_id": "field:So5LeaderboardContenderConnection.nodes",
+            "name": "nodes",
+            "description": "A list of nodes.",
+            "arguments": [],
+            "return_type": {
+              "display": "[So5LeaderboardContender!]!",
+              "named_type": "So5LeaderboardContender",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "So5League": {
+        "type_id": "type:So5League",
+        "kind": "OBJECT",
+        "description": "A So5 league",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "competitions": {
+            "field_id": "field:So5League.competitions",
+            "name": "competitions",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "[Competition!]!",
+              "named_type": "Competition",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "So5Lineup": {
+        "type_id": "type:So5Lineup",
+        "kind": "OBJECT",
+        "description": "A SO5 lineup",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "myThresholdsStreakTask": {
+            "field_id": "field:So5Lineup.myThresholdsStreakTask",
+            "name": "myThresholdsStreakTask",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "ThresholdsStreakTask",
+              "named_type": "ThresholdsStreakTask",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "So5Root": {
+        "type_id": "type:So5Root",
+        "kind": "OBJECT",
+        "description": "The So5 fields",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "campaign": {
+            "field_id": "field:So5Root.campaign",
+            "name": "campaign",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:So5Root.campaign.slug",
+                "name": "slug",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "String!",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "So5Campaign",
+              "named_type": "So5Campaign",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "So5Rules": {
+        "type_id": "type:So5Rules",
+        "kind": "OBJECT",
+        "description": "The rule set of a So5Leaderboard",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "activeClubs": {
+            "field_id": "field:So5Rules.activeClubs",
+            "name": "activeClubs",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "[Club!]",
+              "named_type": "Club",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "So5Score": {
+        "type_id": "type:So5Score",
+        "kind": "OBJECT",
+        "description": "A SO5 Score",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "playerGameStats": {
+            "field_id": "field:So5Score.playerGameStats",
+            "name": "playerGameStats",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "PlayerGameStats!",
+              "named_type": "PlayerGameStats",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "So5ScoreConnection": {
+        "type_id": "type:So5ScoreConnection",
+        "kind": "OBJECT",
+        "description": "The connection type for So5Score.",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "nodes": {
+            "field_id": "field:So5ScoreConnection.nodes",
+            "name": "nodes",
+            "description": "A list of nodes.",
+            "arguments": [],
+            "return_type": {
+              "display": "[So5Score!]!",
+              "named_type": "So5Score",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "Squad": {
+        "type_id": "type:Squad",
+        "kind": "OBJECT",
+        "description": "A squad of users for a dedicated sport",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "captain": {
+            "field_id": "field:Squad.captain",
+            "name": "captain",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "User!",
+              "named_type": "User",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "StarkwareAccount": {
+        "type_id": "type:StarkwareAccount",
+        "kind": "OBJECT",
+        "description": "A Starkware Account",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "user": {
+            "field_id": "field:StarkwareAccount.user",
+            "name": "user",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "User",
+              "named_type": "User",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "Suspension": {
+        "type_id": "type:Suspension",
+        "kind": "OBJECT",
+        "description": "A player suspension",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "competition": {
+            "field_id": "field:Suspension.competition",
+            "name": "competition",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "Competition!",
+              "named_type": "Competition",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "TeamFormation": {
+        "type_id": "type:TeamFormation",
+        "kind": "OBJECT",
+        "description": "A representation of team formation for a specific game",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "bench": {
+            "field_id": "field:TeamFormation.bench",
+            "name": "bench",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "[Player!]!",
+              "named_type": "Player",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "ThresholdStreakTaskThreshold": {
+        "type_id": "type:ThresholdStreakTaskThreshold",
+        "kind": "OBJECT",
+        "description": "So5 Threshold Streak Task Threshold",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "additionalLineupTasks": {
+            "field_id": "field:ThresholdStreakTaskThreshold.additionalLineupTasks",
+            "name": "additionalLineupTasks",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "[ThresholdsStreakAdditionalLineupTask!]!",
+              "named_type": "ThresholdsStreakAdditionalLineupTask",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "ThresholdsStreakAdditionalLineupTask": {
+        "type_id": "type:ThresholdsStreakAdditionalLineupTask",
+        "kind": "OBJECT",
+        "description": "So5 Threshold Streak Additional Lineup Task",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "myRewardPoolShares": {
+            "field_id": "field:ThresholdsStreakAdditionalLineupTask.myRewardPoolShares",
+            "name": "myRewardPoolShares",
+            "description": "The `my_reward_pool_shares` field cannot be nested within a list.",
+            "arguments": [],
+            "return_type": {
+              "display": "[RewardPoolShare!]",
+              "named_type": "RewardPoolShare",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "ThresholdsStreakTask": {
+        "type_id": "type:ThresholdsStreakTask",
+        "kind": "OBJECT",
+        "description": "So5 Threshold Streak Task",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "currentThreshold": {
+            "field_id": "field:ThresholdsStreakTask.currentThreshold",
+            "name": "currentThreshold",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:ThresholdsStreakTask.currentThreshold.forNextLineup",
+                "name": "forNextLineup",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Boolean",
+                  "named_type": "Boolean",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              }
+            ],
+            "return_type": {
+              "display": "ThresholdStreakTaskThreshold!",
+              "named_type": "ThresholdStreakTaskThreshold",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "TokenAuction": {
+        "type_id": "type:TokenAuction",
+        "kind": "OBJECT",
+        "description": "An auction in the Token service",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "bestBid": {
+            "field_id": "field:TokenAuction.bestBid",
+            "name": "bestBid",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "TokenBid",
+              "named_type": "TokenBid",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "TokenBid": {
+        "type_id": "type:TokenBid",
+        "kind": "OBJECT",
+        "description": "A bid on an TokenAuction",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "userBidder": {
+            "field_id": "field:TokenBid.userBidder",
+            "name": "userBidder",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "User",
+              "named_type": "User",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "TokenRoot": {
+        "type_id": "type:TokenRoot",
+        "kind": "OBJECT",
+        "description": "The Tokens queries",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "auction": {
+            "field_id": "field:TokenRoot.auction",
+            "name": "auction",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:TokenRoot.auction.id",
+                "name": "id",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "String!",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "TokenAuction!",
+              "named_type": "TokenAuction",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "User": {
+        "type_id": "type:User",
+        "kind": "OBJECT",
+        "description": "A Sorare user",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "baseballUserProfile": {
+            "field_id": "field:User.baseballUserProfile",
+            "name": "baseballUserProfile",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "BaseballUserSportProfile",
+              "named_type": "BaseballUserSportProfile",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          },
+          "followers": {
+            "field_id": "field:User.followers",
+            "name": "followers",
+            "description": "The `followers` field cannot be nested within a list.",
+            "arguments": [
+              {
+                "arg_id": "arg:User.followers.after",
+                "name": "after",
+                "description": "Returns the elements in the list that come after the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:User.followers.before",
+                "name": "before",
+                "description": "Returns the elements in the list that come before the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:User.followers.first",
+                "name": "first",
+                "description": "Returns the first _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:User.followers.last",
+                "name": "last",
+                "description": "Returns the last _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              }
+            ],
+            "return_type": {
+              "display": "UserWithSubscriptionSlugConnection!",
+              "named_type": "UserWithSubscriptionSlugConnection",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "publicWatchlists": {
+            "field_id": "field:User.publicWatchlists",
+            "name": "publicWatchlists",
+            "description": "The `public_watchlists` field cannot be nested within a list.",
+            "arguments": [
+              {
+                "arg_id": "arg:User.publicWatchlists.after",
+                "name": "after",
+                "description": "Returns the elements in the list that come after the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:User.publicWatchlists.before",
+                "name": "before",
+                "description": "Returns the elements in the list that come before the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:User.publicWatchlists.first",
+                "name": "first",
+                "description": "Returns the first _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:User.publicWatchlists.last",
+                "name": "last",
+                "description": "Returns the last _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:User.publicWatchlists.sport",
+                "name": "sport",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Sport!",
+                  "named_type": "Sport",
+                  "named_kind": "ENUM",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "WatchlistConnection",
+              "named_type": "WatchlistConnection",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "UserAccountEntry": {
+        "type_id": "type:UserAccountEntry",
+        "kind": "OBJECT",
+        "description": "A user account entry",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "user": {
+            "field_id": "field:UserAccountEntry.user",
+            "name": "user",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "User!",
+              "named_type": "User",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "UserAccountEntryConnection": {
+        "type_id": "type:UserAccountEntryConnection",
+        "kind": "OBJECT",
+        "description": "The connection type for UserAccountEntry.",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "nodes": {
+            "field_id": "field:UserAccountEntryConnection.nodes",
+            "name": "nodes",
+            "description": "A list of nodes.",
+            "arguments": [],
+            "return_type": {
+              "display": "[UserAccountEntry!]!",
+              "named_type": "UserAccountEntry",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "UserCardCollection": {
+        "type_id": "type:UserCardCollection",
+        "kind": "OBJECT",
+        "description": "The cards of a user for a collection",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "cardCollection": {
+            "field_id": "field:UserCardCollection.cardCollection",
+            "name": "cardCollection",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "CardCollection!",
+              "named_type": "CardCollection",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          },
+          "slots": {
+            "field_id": "field:UserCardCollection.slots",
+            "name": "slots",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:UserCardCollection.slots.onlyFulfilled",
+                "name": "onlyFulfilled",
+                "description": null,
+                "default_value": "false",
+                "type_ref": {
+                  "display": "Boolean",
+                  "named_type": "Boolean",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:UserCardCollection.slots.skin",
+                "name": "skin",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Skin",
+                  "named_type": "Skin",
+                  "named_kind": "ENUM",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:UserCardCollection.slots.skins",
+                "name": "skins",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "[Skin!]",
+                  "named_type": "Skin",
+                  "named_kind": "ENUM",
+                  "wrappers": [
+                    "LIST",
+                    "NON_NULL"
+                  ]
+                }
+              },
+              {
+                "arg_id": "arg:UserCardCollection.slots.stackByPlayer",
+                "name": "stackByPlayer",
+                "description": null,
+                "default_value": "false",
+                "type_ref": {
+                  "display": "Boolean",
+                  "named_type": "Boolean",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              }
+            ],
+            "return_type": {
+              "display": "[UserCardCollectionSlot!]!",
+              "named_type": "UserCardCollectionSlot",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          },
+          "user": {
+            "field_id": "field:UserCardCollection.user",
+            "name": "user",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "User!",
+              "named_type": "User",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "UserCardCollectionConnection": {
+        "type_id": "type:UserCardCollectionConnection",
+        "kind": "OBJECT",
+        "description": "The connection type for UserCardCollection.",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "nodes": {
+            "field_id": "field:UserCardCollectionConnection.nodes",
+            "name": "nodes",
+            "description": "A list of nodes.",
+            "arguments": [],
+            "return_type": {
+              "display": "[UserCardCollection!]!",
+              "named_type": "UserCardCollection",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "UserCardCollectionSlot": {
+        "type_id": "type:UserCardCollectionSlot",
+        "kind": "OBJECT",
+        "description": "A slot in a user collection of cards",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "slot": {
+            "field_id": "field:UserCardCollectionSlot.slot",
+            "name": "slot",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "CardCollectionSlot!",
+              "named_type": "CardCollectionSlot",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "UserConnection": {
+        "type_id": "type:UserConnection",
+        "kind": "OBJECT",
+        "description": "The connection type for User.",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "nodes": {
+            "field_id": "field:UserConnection.nodes",
+            "name": "nodes",
+            "description": "A list of nodes.",
+            "arguments": [],
+            "return_type": {
+              "display": "[User!]!",
+              "named_type": "User",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "UserFixtureResults": {
+        "type_id": "type:UserFixtureResults",
+        "kind": "OBJECT",
+        "description": null,
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "so5LeaderboardContenders": {
+            "field_id": "field:UserFixtureResults.so5LeaderboardContenders",
+            "name": "so5LeaderboardContenders",
+            "description": null,
+            "arguments": [
+              {
+                "arg_id": "arg:UserFixtureResults.so5LeaderboardContenders.after",
+                "name": "after",
+                "description": "Returns the elements in the list that come after the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:UserFixtureResults.so5LeaderboardContenders.before",
+                "name": "before",
+                "description": "Returns the elements in the list that come before the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:UserFixtureResults.so5LeaderboardContenders.first",
+                "name": "first",
+                "description": "Returns the first _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:UserFixtureResults.so5LeaderboardContenders.last",
+                "name": "last",
+                "description": "Returns the last _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              }
+            ],
+            "return_type": {
+              "display": "So5LeaderboardContenderConnection!",
+              "named_type": "So5LeaderboardContenderConnection",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "UserFixtureResultsConnection": {
+        "type_id": "type:UserFixtureResultsConnection",
+        "kind": "OBJECT",
+        "description": "The connection type for UserFixtureResults.",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "nodes": {
+            "field_id": "field:UserFixtureResultsConnection.nodes",
+            "name": "nodes",
+            "description": "A list of nodes.",
+            "arguments": [],
+            "return_type": {
+              "display": "[UserFixtureResults!]!",
+              "named_type": "UserFixtureResults",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "UserWithSubscriptionSlug": {
+        "type_id": "type:UserWithSubscriptionSlug",
+        "kind": "OBJECT",
+        "description": "A Sorare user with the subscription slug of the current user",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "publicWatchlists": {
+            "field_id": "field:UserWithSubscriptionSlug.publicWatchlists",
+            "name": "publicWatchlists",
+            "description": "The `public_watchlists` field cannot be nested within a list.",
+            "arguments": [
+              {
+                "arg_id": "arg:UserWithSubscriptionSlug.publicWatchlists.after",
+                "name": "after",
+                "description": "Returns the elements in the list that come after the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:UserWithSubscriptionSlug.publicWatchlists.before",
+                "name": "before",
+                "description": "Returns the elements in the list that come before the specified cursor.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "String",
+                  "named_type": "String",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:UserWithSubscriptionSlug.publicWatchlists.first",
+                "name": "first",
+                "description": "Returns the first _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:UserWithSubscriptionSlug.publicWatchlists.last",
+                "name": "last",
+                "description": "Returns the last _n_ elements from the list.",
+                "default_value": null,
+                "type_ref": {
+                  "display": "Int",
+                  "named_type": "Int",
+                  "named_kind": "SCALAR",
+                  "wrappers": []
+                }
+              },
+              {
+                "arg_id": "arg:UserWithSubscriptionSlug.publicWatchlists.sport",
+                "name": "sport",
+                "description": null,
+                "default_value": null,
+                "type_ref": {
+                  "display": "Sport!",
+                  "named_type": "Sport",
+                  "named_kind": "ENUM",
+                  "wrappers": [
+                    "NON_NULL"
+                  ]
+                }
+              }
+            ],
+            "return_type": {
+              "display": "WatchlistConnection",
+              "named_type": "WatchlistConnection",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "UserWithSubscriptionSlugConnection": {
+        "type_id": "type:UserWithSubscriptionSlugConnection",
+        "kind": "OBJECT",
+        "description": "The connection type for UserWithSubscriptionSlug.",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "nodes": {
+            "field_id": "field:UserWithSubscriptionSlugConnection.nodes",
+            "name": "nodes",
+            "description": "A list of nodes.",
+            "arguments": [],
+            "return_type": {
+              "display": "[UserWithSubscriptionSlug!]!",
+              "named_type": "UserWithSubscriptionSlug",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "Watchlist": {
+        "type_id": "type:Watchlist",
+        "kind": "OBJECT",
+        "description": "A watchlist",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {},
+        "input_fields": {},
+        "enum_values": []
+      },
+      "WatchlistConnection": {
+        "type_id": "type:WatchlistConnection",
+        "kind": "OBJECT",
+        "description": "The connection type for Watchlist.",
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "nodes": {
+            "field_id": "field:WatchlistConnection.nodes",
+            "name": "nodes",
+            "description": "A list of nodes.",
+            "arguments": [],
+            "return_type": {
+              "display": "[Watchlist!]!",
+              "named_type": "Watchlist",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "NON_NULL",
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "WheelConfig": {
+        "type_id": "type:WheelConfig",
+        "kind": "OBJECT",
+        "description": "A wheel config",
+        "interfaces": [
+          "Node"
+        ],
+        "possible_types": [],
+        "fields": {
+          "rewardPurchaseEligibilityRules": {
+            "field_id": "field:WheelConfig.rewardPurchaseEligibilityRules",
+            "name": "rewardPurchaseEligibilityRules",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "WheelTicketEligibilityRules",
+              "named_type": "WheelTicketEligibilityRules",
+              "named_kind": "OBJECT",
+              "wrappers": []
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      },
+      "WheelTicketEligibilityRules": {
+        "type_id": "type:WheelTicketEligibilityRules",
+        "kind": "OBJECT",
+        "description": null,
+        "interfaces": [],
+        "possible_types": [],
+        "fields": {
+          "eligibleCompetitions": {
+            "field_id": "field:WheelTicketEligibilityRules.eligibleCompetitions",
+            "name": "eligibleCompetitions",
+            "description": null,
+            "arguments": [],
+            "return_type": {
+              "display": "[Competition!]",
+              "named_type": "Competition",
+              "named_kind": "OBJECT",
+              "wrappers": [
+                "LIST",
+                "NON_NULL"
+              ]
+            }
+          }
+        },
+        "input_fields": {},
+        "enum_values": []
+      }
+    }
+  }
+}

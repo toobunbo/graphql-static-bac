@@ -1,0 +1,66 @@
+{
+  "model_version": "argument-classifier-v1",
+
+  "exact_selector_names": [
+    "id",
+    "ids"
+  ],
+
+  "selector_suffix_tokens": [
+    "id",
+    "ids",
+    "identifier",
+    "key",
+    "slug",
+    "slugs",
+    "uuid",
+    "uuids"
+  ],
+
+  "authz_modifier_prefixes": [
+    "actingUser",
+    "impersonatedUser",
+    "viewAs"
+  ],
+
+  "definite_noise_names": [
+    "after",
+    "before",
+    "clientMutationId",
+    "cursor",
+    "filter",
+    "filters",
+    "first",
+    "format",
+    "granularity",
+    "includeDeprecated",
+    "ittk",
+    "language",
+    "languageCode",
+    "last",
+    "limit",
+    "locale",
+    "max",
+    "maxCharCount",
+    "maxDate",
+    "maxSelectionCount",
+    "min",
+    "minCharCount",
+    "minDate",
+    "minSelectionCount",
+    "offset",
+    "order",
+    "orderBy",
+    "page",
+    "pageBreak",
+    "perPage",
+    "sort",
+    "sortBy",
+    "sortDirection",
+    "sortField",
+    "tracking",
+    "trackingUrl"
+  ],
+
+  "identity_scalar_names": []
+}

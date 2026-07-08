@@ -1,0 +1,329 @@
+{
+  "artifact_version": "1.0",
+  "schema_fingerprint": "sha256:2fa6a5f67a0fda683077797983b582514d303ab4d8326c0fc77021aaed5ccf80",
+  "analyzer_version": "0.1.0",
+  "scoring_profile": "bug-bounty-v1",
+  "profile": "bug-bounty",
+  "scope": ["query"],
+  "status": "complete",
+  "warnings": [],
+  "fixture": {
+    "name": "user_device",
+    "schema_subset": true
+  },
+  "sink_types": [
+    {
+      "type_id": "type:UserDevice",
+      "type_name": "UserDevice",
+      "tiers": ["T3"],
+      "impact": "medium",
+      "addressability": {
+        "global_id": true,
+        "interface": "Node",
+        "entry_field_ids": ["field:Query.node", "field:Query.nodes"]
+      },
+      "sink_refs": [
+        {
+          "sink_ref_id": "sink:UserDevice",
+          "kind": "TYPE",
+          "type_id": "type:UserDevice",
+          "field_id": null,
+          "categories": ["device_metadata"],
+          "impact": "medium",
+          "evidence": [
+            {
+              "rule": "implements_node",
+              "interface": "Node"
+            },
+            {
+              "rule": "sensitive_type_token",
+              "matched_tokens": ["device"]
+            }
+          ]
+        },
+        {
+          "sink_ref_id": "sink:UserDevice.deviceType",
+          "kind": "FIELD",
+          "type_id": "type:UserDevice",
+          "field_id": "field:UserDevice.deviceType",
+          "categories": ["device_metadata"],
+          "impact": "low",
+          "evidence": [
+            {
+              "rule": "sensitive_field_token",
+              "matched_tokens": ["device"]
+            }
+          ]
+        },
+        {
+          "sink_ref_id": "sink:UserDevice.lastUsedAt",
+          "kind": "FIELD",
+          "type_id": "type:UserDevice",
+          "field_id": "field:UserDevice.lastUsedAt",
+          "categories": ["device_metadata", "activity_metadata"],
+          "impact": "medium",
+          "evidence": [
+            {
+              "rule": "sensitive_field_context",
+              "matched_tokens": ["last", "used", "at"],
+              "parent_type_tokens": ["user", "device"]
+            }
+          ]
+        },
+        {
+          "sink_ref_id": "sink:UserDevice.os",
+          "kind": "FIELD",
+          "type_id": "type:UserDevice",
+          "field_id": "field:UserDevice.os",
+          "categories": ["device_metadata"],
+          "impact": "low",
+          "evidence": [
+            {
+              "rule": "sensitive_field_context",
+              "matched_tokens": ["os"],
+              "parent_type_tokens": ["user", "device"]
+            }
+          ]
+        },
+        {
+          "sink_ref_id": "sink:UserDevice.userAgent",
+          "kind": "FIELD",
+          "type_id": "type:UserDevice",
+          "field_id": "field:UserDevice.userAgent",
+          "categories": ["pii", "device_metadata"],
+          "impact": "medium",
+          "evidence": [
+            {
+              "rule": "sensitive_field_context",
+              "matched_tokens": ["user", "agent"]
+            }
+          ]
+        }
+      ],
+      "caps": [
+        {
+          "cap_id": "cap:sha256:bb7413ac2803ba4d1a087dc85ed1644e71f51eafb6706b676d5e80d6f2bf5adc",
+          "origin": "global_id",
+          "entry_field_id": "field:Query.node",
+          "target_type_id": "type:UserDevice",
+          "target_sink_ref_ids": [
+            "sink:UserDevice",
+            "sink:UserDevice.deviceType",
+            "sink:UserDevice.lastUsedAt",
+            "sink:UserDevice.os",
+            "sink:UserDevice.userAgent"
+          ],
+          "edges": [
+            {
+              "edge_id": "field:Query.node",
+              "kind": "FIELD",
+              "source_type_id": "type:Query",
+              "field_id": "field:Query.node",
+              "target_type_id": "type:Node"
+            },
+            {
+              "edge_id": "type_condition:Node->UserDevice",
+              "kind": "TYPE_CONDITION",
+              "source_type_id": "type:Node",
+              "field_id": null,
+              "target_type_id": "type:UserDevice"
+            }
+          ],
+          "cycle_templates": [],
+          "selectors": [
+            {
+              "arg_ref": "arg:Query.node.id",
+              "root_arg_ref": "arg:Query.node.id",
+              "arg_path": "Query.node.id",
+              "input_path": [],
+              "type_ref": {
+                "display": "ID!",
+                "named_type": "ID",
+                "named_kind": "SCALAR",
+                "wrappers": ["NON_NULL"]
+              },
+              "classification": "object_selector",
+              "confidence": "high"
+            }
+          ],
+          "authz_modifiers": [],
+          "sanitizer_boundaries": [],
+          "flow": "direct_global_id",
+          "ownership_continuity": "unknown",
+          "ranking_bucket": "global_id",
+          "edge_count": 2,
+          "field_hop_count": 1,
+          "score": 6.0,
+          "score_breakdown": [
+            {"signal": "object_selector", "delta": 3.0},
+            {"signal": "global_id_track", "delta": 2.0},
+            {"signal": "direct_flow", "delta": 1.0}
+          ],
+          "confidence": "high"
+        },
+        {
+          "cap_id": "cap:sha256:de1c459792ac720e8e88f2c2175c88095a7041f5b651e399cf6ec238486ed135",
+          "origin": "global_id",
+          "entry_field_id": "field:Query.nodes",
+          "target_type_id": "type:UserDevice",
+          "target_sink_ref_ids": [
+            "sink:UserDevice",
+            "sink:UserDevice.deviceType",
+            "sink:UserDevice.lastUsedAt",
+            "sink:UserDevice.os",
+            "sink:UserDevice.userAgent"
+          ],
+          "edges": [
+            {
+              "edge_id": "field:Query.nodes",
+              "kind": "FIELD",
+              "source_type_id": "type:Query",
+              "field_id": "field:Query.nodes",
+              "target_type_id": "type:Node"
+            },
+            {
+              "edge_id": "type_condition:Node->UserDevice",
+              "kind": "TYPE_CONDITION",
+              "source_type_id": "type:Node",
+              "field_id": null,
+              "target_type_id": "type:UserDevice"
+            }
+          ],
+          "cycle_templates": [],
+          "selectors": [
+            {
+              "arg_ref": "arg:Query.nodes.ids",
+              "root_arg_ref": "arg:Query.nodes.ids",
+              "arg_path": "Query.nodes.ids",
+              "input_path": [],
+              "type_ref": {
+                "display": "[ID!]!",
+                "named_type": "ID",
+                "named_kind": "SCALAR",
+                "wrappers": ["NON_NULL", "LIST", "NON_NULL"]
+              },
+              "classification": "object_selector",
+              "confidence": "high"
+            }
+          ],
+          "authz_modifiers": [],
+          "sanitizer_boundaries": [],
+          "flow": "direct_global_id",
+          "ownership_continuity": "unknown",
+          "ranking_bucket": "global_id",
+          "edge_count": 2,
+          "field_hop_count": 1,
+          "score": 6.0,
+          "score_breakdown": [
+            {"signal": "object_selector", "delta": 3.0},
+            {"signal": "global_id_track", "delta": 2.0},
+            {"signal": "direct_flow", "delta": 1.0}
+          ],
+          "confidence": "high"
+        },
+        {
+          "cap_id": "cap:sha256:3c81becbeacbb9de0297a5c81ed9b64c46b849e0477129f6ff283ecc4ffcd46c",
+          "origin": "traversal",
+          "entry_field_id": "field:Query.currentUser",
+          "target_type_id": "type:UserDevice",
+          "target_sink_ref_ids": [
+            "sink:UserDevice",
+            "sink:UserDevice.deviceType",
+            "sink:UserDevice.lastUsedAt",
+            "sink:UserDevice.os",
+            "sink:UserDevice.userAgent"
+          ],
+          "edges": [
+            {
+              "edge_id": "field:Query.currentUser",
+              "kind": "FIELD",
+              "source_type_id": "type:Query",
+              "field_id": "field:Query.currentUser",
+              "target_type_id": "type:CurrentUser"
+            },
+            {
+              "edge_id": "field:CurrentUser.devices",
+              "kind": "FIELD",
+              "source_type_id": "type:CurrentUser",
+              "field_id": "field:CurrentUser.devices",
+              "target_type_id": "type:UserDevice"
+            }
+          ],
+          "cycle_templates": [],
+          "selectors": [],
+          "authz_modifiers": [],
+          "sanitizer_boundaries": [
+            {
+              "boundary_id": "boundary:self:Query.currentUser",
+              "family": "self_scope",
+              "root_edge_id": "field:Query.currentUser",
+              "confidence": "high",
+              "evidence": ["field_name:currentUser"]
+            }
+          ],
+          "flow": "no_selector",
+          "ownership_continuity": "not_applicable",
+          "ranking_bucket": "self_scoped",
+          "edge_count": 2,
+          "field_hop_count": 2,
+          "score": -2.0,
+          "score_breakdown": [
+            {"signal": "sanitizer_boundary", "boundary_id": "boundary:self:Query.currentUser", "delta": -2.0}
+          ],
+          "confidence": "medium"
+        },
+        {
+          "cap_id": "cap:sha256:7e98f9fe16e37b4fdbbc2b61c4ead7f41f53b596e6157d64bb161b05b9a955c1",
+          "origin": "traversal",
+          "entry_field_id": "field:Query.currentUser",
+          "target_type_id": "type:UserDevice",
+          "target_sink_ref_ids": [
+            "sink:UserDevice",
+            "sink:UserDevice.deviceType",
+            "sink:UserDevice.lastUsedAt",
+            "sink:UserDevice.os",
+            "sink:UserDevice.userAgent"
+          ],
+          "edges": [
+            {
+              "edge_id": "field:Query.currentUser",
+              "kind": "FIELD",
+              "source_type_id": "type:Query",
+              "field_id": "field:Query.currentUser",
+              "target_type_id": "type:CurrentUser"
+            },
+            {
+              "edge_id": "field:CurrentUser.currentDevice",
+              "kind": "FIELD",
+              "source_type_id": "type:CurrentUser",
+              "field_id": "field:CurrentUser.currentDevice",
+              "target_type_id": "type:UserDevice"
+            }
+          ],
+          "cycle_templates": [],
+          "selectors": [],
+          "authz_modifiers": [],
+          "sanitizer_boundaries": [
+            {
+              "boundary_id": "boundary:self:Query.currentUser",
+              "family": "self_scope",
+              "root_edge_id": "field:Query.currentUser",
+              "confidence": "high",
+              "evidence": ["field_name:currentUser"]
+            }
+          ],
+          "flow": "no_selector",
+          "ownership_continuity": "not_applicable",
+          "ranking_bucket": "self_scoped",
+          "edge_count": 2,
+          "field_hop_count": 2,
+          "score": -2.0,
+          "score_breakdown": [
+            {"signal": "sanitizer_boundary", "boundary_id": "boundary:self:Query.currentUser", "delta": -2.0}
+          ],
+          "confidence": "medium"
+        }
+      ]
+    }
+  ]
+}

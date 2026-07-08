@@ -1,0 +1,153 @@
+{
+  "data": {
+    "__schema": {
+      "queryType": {"name": "Query"},
+      "mutationType": null,
+      "subscriptionType": null,
+      "types": [
+        {
+          "kind": "OBJECT",
+          "name": "Query",
+          "description": "Root query description",
+          "interfaces": [],
+          "possibleTypes": null,
+          "inputFields": null,
+          "enumValues": null,
+          "fields": [
+            {
+              "name": "node",
+              "description": null,
+              "args": [
+                {
+                  "name": "id",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {"kind": "SCALAR", "name": "ID", "ofType": null}
+                  }
+                }
+              ],
+              "type": {"kind": "INTERFACE", "name": "Node", "ofType": null}
+            },
+            {
+              "name": "search",
+              "description": null,
+              "args": [
+                {
+                  "name": "filter",
+                  "description": null,
+                  "defaultValue": "{limit: 10, role: USER}",
+                  "type": {"kind": "INPUT_OBJECT", "name": "SearchFilter", "ofType": null}
+                }
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {"kind": "UNION", "name": "SearchResult", "ofType": null}
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "INTERFACE",
+          "name": "Node",
+          "description": null,
+          "interfaces": [],
+          "possibleTypes": [{"name": "Team"}, {"name": "User"}],
+          "inputFields": null,
+          "enumValues": null,
+          "fields": [
+            {
+              "name": "id",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {"kind": "SCALAR", "name": "ID", "ofType": null}
+              }
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "User",
+          "description": null,
+          "interfaces": [{"name": "Node"}],
+          "possibleTypes": null,
+          "inputFields": null,
+          "enumValues": null,
+          "fields": [
+            {"name": "id", "description": null, "args": [], "type": {"kind": "NON_NULL", "name": null, "ofType": {"kind": "SCALAR", "name": "ID", "ofType": null}}},
+            {"name": "name", "description": null, "args": [], "type": {"kind": "NON_NULL", "name": null, "ofType": {"kind": "SCALAR", "name": "String", "ofType": null}}},
+            {"name": "email", "description": null, "args": [], "type": {"kind": "SCALAR", "name": "String", "ofType": null}}
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Team",
+          "description": null,
+          "interfaces": [{"name": "Node"}],
+          "possibleTypes": null,
+          "inputFields": null,
+          "enumValues": null,
+          "fields": [
+            {"name": "id", "description": null, "args": [], "type": {"kind": "NON_NULL", "name": null, "ofType": {"kind": "SCALAR", "name": "ID", "ofType": null}}},
+            {"name": "slug", "description": null, "args": [], "type": {"kind": "NON_NULL", "name": null, "ofType": {"kind": "SCALAR", "name": "String", "ofType": null}}}
+          ]
+        },
+        {
+          "kind": "UNION",
+          "name": "SearchResult",
+          "description": null,
+          "interfaces": [],
+          "possibleTypes": [{"name": "User"}, {"name": "Team"}],
+          "fields": null,
+          "inputFields": null,
+          "enumValues": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "SearchFilter",
+          "description": null,
+          "interfaces": [],
+          "possibleTypes": null,
+          "fields": null,
+          "enumValues": null,
+          "inputFields": [
+            {"name": "ownerIds", "description": null, "defaultValue": null, "type": {"kind": "NON_NULL", "name": null, "ofType": {"kind": "LIST", "name": null, "ofType": {"kind": "NON_NULL", "name": null, "ofType": {"kind": "SCALAR", "name": "ID", "ofType": null}}}}},
+            {"name": "limit", "description": null, "defaultValue": "20", "type": {"kind": "SCALAR", "name": "Int", "ofType": null}},
+            {"name": "role", "description": null, "defaultValue": "USER", "type": {"kind": "ENUM", "name": "Role", "ofType": null}}
+          ]
+        },
+        {
+          "kind": "ENUM",
+          "name": "Role",
+          "description": null,
+          "interfaces": [],
+          "possibleTypes": null,
+          "fields": null,
+          "inputFields": null,
+          "enumValues": [
+            {"name": "ADMIN", "description": null, "isDeprecated": false, "deprecationReason": null},
+            {"name": "USER", "description": null, "isDeprecated": false, "deprecationReason": null},
+            {"name": "OLD", "description": null, "isDeprecated": true, "deprecationReason": "Use USER"}
+          ]
+        },
+        {"kind": "SCALAR", "name": "ID", "description": null, "interfaces": [], "possibleTypes": null, "fields": null, "inputFields": null, "enumValues": null},
+        {"kind": "SCALAR", "name": "String", "description": null, "interfaces": [], "possibleTypes": null, "fields": null, "inputFields": null, "enumValues": null},
+        {"kind": "SCALAR", "name": "Int", "description": null, "interfaces": [], "possibleTypes": null, "fields": null, "inputFields": null, "enumValues": null}
+      ]
+    }
+  }
+}

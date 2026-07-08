@@ -1,0 +1,53 @@
+{
+  "model_version": "argument-classifier-v1",
+  "exact_selector_names": [
+    "assetId",
+    "assetIds",
+    "handle",
+    "handles",
+    "id",
+    "ids",
+    "slug",
+    "slugs",
+    "uuid",
+    "uuids"
+  ],
+  "selector_suffix_tokens": [
+    "id",
+    "ids",
+    "slug",
+    "slugs",
+    "uuid",
+    "uuids"
+  ],
+  "authz_modifier_prefixes": [
+    "actingUser",
+    "impersonatedUser",
+    "viewAs"
+  ],
+  "definite_noise_names": [
+    "after",
+    "before",
+    "clientMutationId",
+    "currency",
+    "cursor",
+    "first",
+    "format",
+    "last",
+    "limit",
+    "locale",
+    "offset",
+    "order",
+    "orderBy",
+    "page",
+    "perPage",
+    "sort",
+    "sortBy"
+  ],
+  "identity_scalar_names": [
+    "GlobalID",
+    "GUID",
+    "RelayID",
+    "UUID"
+  ]
+}

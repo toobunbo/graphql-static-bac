@@ -1,0 +1,7 @@
+directive @link(url: String!) repeatable on SCHEMA
+
+extend schema @link(url: "https://specs.apollo.dev/federation/v2.3")
+
+type Query {
+  health: Boolean!
+}

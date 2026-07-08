@@ -1,0 +1,15 @@
+schema {
+  query: RootQuery
+}
+
+extend schema {
+  mutation: RootMutation
+}
+
+type RootQuery {
+  value: String
+}
+
+type RootMutation {
+  update(value: String!): Boolean!
+}
