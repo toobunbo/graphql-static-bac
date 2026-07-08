@@ -247,10 +247,6 @@ query TestOrder_1($seed1: ID!) {
 }
 ```
 
-### `md`
-
-Markdown report with summary tables and per-route flat list — suitable for attaching to a bug report or pentest deliverable.
-
 ---
 
 ## Argument Classifier Lexicon
@@ -393,7 +389,7 @@ tophql/
 | S0 | Schema IR Builder (SDL + introspection) | ✅ Production |
 | S2 | Argument Classifier | ✅ Production |
 | S3 | Route Analysis + verdict ranking | ✅ Production |
-| S5 | Artifact Assembler | ⏳ Deferred |
+| S4 | Automation Test | ⏳ Processing |
 
 ---
 
