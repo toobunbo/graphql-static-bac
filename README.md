@@ -331,6 +331,8 @@ tophql stage s0 --input schema.graphql --output schema_ir.json
 > [paste contents of schema_ir.json here]
 > ```
 
+*(For a more comprehensive guide and an advanced prompt template in Vietnamese, see the [Lexicon Authoring Guide](docs/lexicon-authoring-guide.md))*
+
 **Step 3 — Save and use:**
 
 ```bash
