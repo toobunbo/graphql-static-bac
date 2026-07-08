@@ -328,7 +328,7 @@ tophql stage s0 --input schema.graphql --output schema_ir.json
 >
 > Schema IR:
 > ```json
-> <paste contents of schema_ir.json here>
+> [paste contents of schema_ir.json here]
 > ```
 
 **Step 3 — Save and use:**
